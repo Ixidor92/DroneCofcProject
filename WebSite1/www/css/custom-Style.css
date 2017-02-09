@@ -1,0 +1,8 @@
+#resize{
+	height: 200px; width: 200px;
+	overflow:auto;resize:both;
+	padding:10px;
+	max-wight:300px;
+	max-height:300px;
+	background:#333;color:white;
+}
