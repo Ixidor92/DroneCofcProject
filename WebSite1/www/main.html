@@ -1,114 +1,79 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>My App</title>
-    <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">      
-    <!-- Path to Font Awesome Library CSS-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- Path to custom app styles-->
-    <link rel="stylesheet" href="css/custom-Style.css">
-        <link rel="stylesheet" href="css/mainPage-Style.css">
-    
-    
-    
-  </head>
-  <body>
-    <!-- Status bar overlay for fullscreen mode-->
-    <div class="statusbar-overlay"></div>
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-        <p>Left panel content goesee here</p>
-      </div>
-    </div>
-    <!-- Right panel with cover effect-->
-    <div class="panel panel-right panel-cover">
-      <div class="content-block">
-        <p>Right panel content goes here</p>
-      </div>
-    </div>
-    <!-- Views-->
-    <div class="views">
-      <!-- Your main view, should have "view-main" class-->
-      <div class="view view-main">
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-fixed">
-          <!-- Page, data-page contains page name-->
-          <div data-page="index" class="page toolbar-fixed">
-              <!-- Top Navbar-->
-              <div class="navbar">
-                  <div class="navbar-inner">
-                      <!-- We have home navbar without left link-->
-                      <div class="center">Drone Project</div>
-                      <div class="right">
-                          <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="fa fa-bars"></i></a>
-                      </div>
-                  </div>
-              </div>
-            <!-- Scrollable page content-->
-            
-            
-            
- <!-- START of Scrollable main page slide-->           
-  <div class="page-content">
-  <div class="swiper-custom">
-    <div class="swiper-container">
-      <div class="swiper-pagination"></div>
-      <div class="swiper-wrapper">
-      
-      
-      
-      
-        <div class="swiper-slide">
-        
-        <a href="index.html">
-        
-        <img src="img/folly-oval.png" alt="Mountain View" class = "mainPgTitlePic">
-               <div class =mainPgBeachTitle >Folly Beach, SC</div>
-               
-           </a>    
-               
+﻿<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Page, data-page contains page name-->
+<div data-page="main" class="page toolbar-fixed">
+    <!-- Top Navbar-->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Beach Information</div>
         </div>
-               
-               
-               
-               
-               
-        <div class="swiper-slide"><span>Slide 2</span></div>
-        <div class="swiper-slide"><span>Slide 3</span></div>
-        <div class="swiper-slide"><span>Slide 4</span></div>
-      </div>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-</div>
- <!--END of Scrollable main page slide-->           
-            
-            
-            
+    <!-- Scrollable page content-->
+    <div class="page-content">
+             <div class="content-block">
 
-        
-        
-        <!-- Bottom Toolbar-->
-        <div class="toolbar">
-          <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
-        </div>
-      </div>
+                <div class="overlay" id="resize">
+
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1KhqUQNFNyPEiI5GyDVVbQYMsbB8&ll=32.66307841474801%2C-79.91975560879138&z=19" width="640" height="480"></iframe>
+                 </div>
+
+                 <style>
+                                       /* Always set the map height explicitly to define the size of the div
+                     * element that contains the map. */
+                                       #map {
+                                           height: 80%;
+                                       }
+                                       /* Optional: Makes the sample page fill the window. */
+                                       html, body {
+                                           height: 100%;
+                                           margin: 0;
+                                           padding: 0;
+                                       }
+                 </style>
+                 </head>
+                 <body>
+                     <div id="map"></div>
+                     <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: {lat: 32.6635, lng: -79.9188},
+          mapTypeId: "terrain"
+        });
+        var flightPlanCoordinates = [
+          {lat: 32.6645, lng: -79.9156},
+          {lat: 32.6638, lng: -79.9175},
+          {lat: 32.6634, lng: -79.9180},
+          {lat: 32.6632, lng: -79.9185},
+
+          {lat: 32.6635, lng: -79.9177},
+          {lat: 32.6636, lng: -79.9174},
+          {lat: 32.6639, lng: -79.9165},
+          {lat: 32.6646, lng: -79.9156}
+
+
+        ];
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+        flightPath.setMap(map);
+      }
+                     </script>
+                     <script async defer
+                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5e3OUEh2H5p9_QzXngRMx_FcaaqJ2Fsw&callback=initMap">
+                     </script>
+
+
+
+
+</div>
     </div>
-    <!-- Path to Apache Cordova Library JS-->
-    <script type="text/javascript" src="cordova.js"></script>
-    <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="scripts/framework7.min.js"></script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="scripts/my-app.js"></script>
-  </body>
-</html>
+    <script type="text/javascript" src="scripts/videoPlayer.js"></script>
+
+
+ </div>
+    

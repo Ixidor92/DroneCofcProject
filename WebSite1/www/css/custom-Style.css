@@ -3,7 +3,7 @@
 	height: 200px; width: 200px;
 	overflow:auto;resize:both;
 	padding:10px;
-	max-wight:300px;
+	max-width:300px;
 	max-height:300px;
 	background:#333;color:white;
 }
@@ -19,6 +19,6 @@ position: relative;
 }
 
 .overlay{
-	height: 360; width: 480;
+	height: 360px; width: 480px;
 	position: absolute;
 }
