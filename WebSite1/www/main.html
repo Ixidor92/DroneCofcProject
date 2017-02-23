@@ -1,79 +1,96 @@
-﻿<!-- We don't need full layout here, because this page will be parsed with Ajax-->
-<!-- Page, data-page contains page name-->
-<div data-page="main" class="page toolbar-fixed">
-    <!-- Top Navbar-->
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Beach Information</div>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- Path to Font Awesome Library CSS-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Path to custom app styles-->
+    <link rel="stylesheet" href="css/custom-Style.css">
+    <link rel="stylesheet" href="css/mainPage-Style.css">
+    <link rel="stylesheet" href="css/gmapStyle.css">
+
+
+</head>
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main2">
+            <!-- Top Navbar-->
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages toolbar-through">
+                <div data-page="main" class="page toolbar-fixed">
+                    <!-- Top Navbar-->
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+                            <div class="center sliding">Beach Information</div>
+
+                        </div>
+
+                    </div>
+                    
+
+
+                    <a id="openpanel" data-icon="bars" data-iconpos="notext">Home</a>
+
+                    <!-- Scrollable page content-->
+                    <div class="page-content">
+                        <div class="content-block video-container">
+                            <iframe src="http://www.youtube.com/embed/-KU0ekSujNc" frameborder="0"></iframe>
+                        </div>
+
+
+
+                        <p>
+                            <a href="#" id="upy">Show Div With SlideDown()</a>
+                        </p>
+
+                        <div id="container">
+                            <div id="inner">
+
+                                Check it out! This DIV is positioned based on its
+                                very sexy Bottom and then is opened using a slide-down
+                                animation effect (and closed using a slide-up)
+                                animation effect.
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="box" id="box">
+                        <div class="box-inner">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Path to Framework7 Library JS-->
+                <script type="text/javascript" src="scripts/framework7.min.js"></script>
+                <!-- Path to your app js-->
+                <script type="text/javascript" src="scripts/gmap.js"></script>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+                <script type="text/javascript" src="scripts/my-app.js"></script>
+
+
+            </div>
         </div>
     </div>
-    <!-- Scrollable page content-->
-    <div class="page-content">
-             <div class="content-block">
 
-                <div class="overlay" id="resize">
-
-                    <iframe src="https://www.google.com/maps/d/embed?mid=1KhqUQNFNyPEiI5GyDVVbQYMsbB8&ll=32.66307841474801%2C-79.91975560879138&z=19" width="640" height="480"></iframe>
-                 </div>
-
-                 <style>
-                                       /* Always set the map height explicitly to define the size of the div
-                     * element that contains the map. */
-                                       #map {
-                                           height: 80%;
-                                       }
-                                       /* Optional: Makes the sample page fill the window. */
-                                       html, body {
-                                           height: 100%;
-                                           margin: 0;
-                                           padding: 0;
-                                       }
-                 </style>
-                 </head>
-                 <body>
-                     <div id="map"></div>
-                     <script>
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 17,
-          center: {lat: 32.6635, lng: -79.9188},
-          mapTypeId: "terrain"
-        });
-        var flightPlanCoordinates = [
-          {lat: 32.6645, lng: -79.9156},
-          {lat: 32.6638, lng: -79.9175},
-          {lat: 32.6634, lng: -79.9180},
-          {lat: 32.6632, lng: -79.9185},
-
-          {lat: 32.6635, lng: -79.9177},
-          {lat: 32.6636, lng: -79.9174},
-          {lat: 32.6639, lng: -79.9165},
-          {lat: 32.6646, lng: -79.9156}
-
-
-        ];
-        var flightPath = new google.maps.Polyline({
-          path: flightPlanCoordinates,
-          geodesic: true,
-          strokeColor: '#FF0000',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
-        });
-        flightPath.setMap(map);
-      }
-                     </script>
-                     <script async defer
-                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5e3OUEh2H5p9_QzXngRMx_FcaaqJ2Fsw&callback=initMap">
-                     </script>
-
-
-
-
-</div>
-    </div>
-    <script type="text/javascript" src="scripts/videoPlayer.js"></script>
-
-
- </div>
-    
+</body>
+</html> 

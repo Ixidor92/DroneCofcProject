@@ -8,6 +8,9 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
 });
 
+var mainView2 = myApp.addView('.view-main2', {
+});
+
 // Callbacks to run specific code for specific pages, for example for About page:
 myApp.onPageInit('about', function (page) {
     // run createContentPage func after link was clicked
@@ -45,12 +48,32 @@ function createContentPage() {
 	return;
 }
 
-var myApp = new Framework7(); 
-
 var mySwiper = myApp.swiper('.swiper-container', {
   pagination: '.swiper-pagination',
   paginationHide: false,
   paginationClickable: true,
   nextButton: '.swiper-button-next',
   prevButton: '.swiper-button-prev',
-}); 
+});
+
+// When the DOM is ready, initialize the scripts.
+jQuery(function ($) {
+    // Get a reference to the container.
+    var container = $("#container");
+    // Bind the link to toggle the slide.
+    $('#upy').click(
+        function (event) {
+            // Prevent the default event.
+            event.preventDefault();
+            // Toggle the slide based on its current
+            // visibility.
+            if (container.is(":visible")) {
+                // Hide - slide up.
+                container.slideUp(100);
+            } else {
+                // Show - slide down.
+                container.slideDown(100);
+            }
+        }
+    );
+});
