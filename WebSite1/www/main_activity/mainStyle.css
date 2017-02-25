@@ -1,0 +1,66 @@
+.video-container{
+    --position: relative;
+	margin-top: 50px;
+	margin-left: 220px;
+    height:515px; 
+    width:760px;
+    border: 5px solid #000000;
+
+}
+
+.gmap-container{
+    position:  absolute;
+
+    top:0px;
+   	margin-top: 50px;
+	margin-left: 2px;
+
+        height:300px; 
+    width:190px;
+   -- border:6px;
+   border: 5px solid #000000;
+}
+
+.droneIcon-container{
+    position:  absolute;
+    top:50%;
+    left:38%;
+}
+
+.rightMenu-container{
+    position:  absolute;
+    height:300px;
+    width:350px;
+    top:0;
+    right:0;
+    padding-right:5px;
+    margin-top: 50px;
+	margin-right: 2px;
+}
+
+iframe{
+    height:100%;
+    width:100%;
+}
+
+
+#upper {
+    position: relative;
+}
+
+#lower {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#bar {
+    padding: 10px;
+}
+
+#panel {
+    display: none;
+/*    height: 100px;*/
+    background-color: #aaaaaa;
+    padding: 10px;
+}

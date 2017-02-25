@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="/WebSite1/www/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="/WebSite1/www/css/framework7.ios.colors.min.css">
+    <!-- Path to Font Awesome Library CSS-->
+    <link rel="stylesheet" href="/WebSite1/www/css/font-awesome.min.css">
+    <!-- Path to custom app styles-->
+    <link rel="stylesheet" href="/WebSite1/www/main_activity/mainStyle.css">
+
+
+</head>
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main2">
+            <!-- Top Navbar-->
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages toolbar-through">
+                <div data-page="main" class="page toolbar-fixed">
+                    <!-- Top Navbar-->
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+                            <div class="center sliding">Beach Information</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Scrollable page content-->
+                    <div class="page-content">
+
+                        <div class="video-container">
+                            <iframe src="http://www.youtube.com/embed/-KU0ekSujNc" frameborder="0"></iframe>
+                        </div>
+
+                        <div class="gmap-container">
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1KhqUQNFNyPEiI5GyDVVbQYMsbB8&&ll=32.66301517807783%2C-79.92057232897491&z=19"></iframe>
+                            <div class="droneIcon-container">
+                                <img src="/WebSite1/www/main_activity/drone-icon.png" alt="Drone Icon" style="height:40px; width:40px;">
+                            </div>
+                        </div>
+
+                        <div class="list-block rightMenu-container">
+                            <ul>
+                                <li>
+                                    <a href="/WebSite1/www/index_activity/index.html" class="item-link">
+                                        <div class="item-content">
+                                            <img src="/WebSite1/www/main_activity/home-icon.png" alt="HTML5 Icon" style="width:80px;height:80px; right:200px;">
+                                            <div class="item-inner">
+                                                <div class="item-title" Style="left:20px;">Home</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/WebSite1/www/main_activity/main.html" class="item-link">
+                                        <div class="item-content">
+                                            <img src="/WebSite1/www/main_activity/information-icon.png" alt="HTML5 Icon" style="width:80px;height:80px;">
+                                            <div class="item-inner">
+                                                <div class="item-title" Style="left:20px;">Beach</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/WebSite1/www/test.html" class="item-link">
+                                        <div class="item-content">
+                                            <img src="/WebSite1/www/main_activity/twoview-icon.png" alt="HTML5 Icon" style="width:80px;height:80px;">
+                                            <div class="item-inner">
+                                                <div class="item-title" Style="left:20px;">2 View</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                            <div id="lower">
+                                <div id="bar">
+                                    <a href="#" class="item-link">
+                                        <img src="/WebSite1/www/main_activity/settings.png" alt="HTML5 Icon" style="width:80px;height:80px; right:200px;" id="toggle">
+                                    </a>
+                                </div>
+                                <div id="panel">
+                                    <p>TEST PANEL</p>
+                                    <p>TEST PANEL</p>
+                                    <p>TEST PANEL</p>
+                                    <p>TEST PANEL</p>
+                                    <p>TEST PANEL</p>
+                                    <p>TEST PANEL</p>
+                                    <p>TEST PANEL</p>
+                                    <p>TEST PANEL</p>
+                                    <p>TEST PANEL</p>
+                                </div>
+                            </div>
+
+
+
+
+</div><!-- end of Page-content-->
+
+
+
+                    </div>
+
+                <!-- Path to Framework7 Library JS-->
+                <script type="text/javascript" src="/WebSite1/www/scripts/framework7.min.js"></script>
+                <!-- Path to your app js-->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+                <script type="text/javascript" src="/WebSite1/www/scripts/my-app.js"></script>
+                <script type="text/javascript" src="/WebSite1/www/main_activity/mainScript.js"></script>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html> 

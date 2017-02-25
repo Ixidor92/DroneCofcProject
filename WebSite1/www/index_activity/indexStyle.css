@@ -43,35 +43,3 @@
   background: #007aff;
   border-color: #007aff;
 } 
-
-
-
-.video-container{
-    position: relative;
-	margin-top: 50px;
-	margin-left: 200px;
-    width:560px ;height:315px ;
-    frameborder:0
-}
-
-iframe{
-    width:760px ;
-    height:515px ;
-    frameborder:1;
-
-}
-
-#container {
-            bottom: 0px;
-            display: none;
-            left: 20px;
-            position: fixed;
-            width: 90%;
-        }
-
-        #inner {
-            background-color: #F0F0F0;
-            border: 1px solid #666666;
-            border-bottom-width: 0px;
-            padding: 20px 20px 100px 20px;
-        }

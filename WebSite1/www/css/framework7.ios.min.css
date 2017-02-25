@@ -1013,6 +1013,7 @@ p {
     }
 
 .page-content {
+    //background:#6a9966;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     box-sizing: border-box;
@@ -1265,7 +1266,7 @@ html.ios-gt-8 .navbar b, html.ios-gt-8 .toolbar b {
 }
 
 .navbar, .subnavbar, .toolbar {
-    background: #f7f7f8;
+    background: #acf7a5
 }
 
     .navbar a.link, .subnavbar a.link, .toolbar a.link {

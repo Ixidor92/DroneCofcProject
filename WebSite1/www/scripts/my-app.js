@@ -8,8 +8,6 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
 });
 
-var mainView2 = myApp.addView('.view-main2', {
-});
 
 // Callbacks to run specific code for specific pages, for example for About page:
 myApp.onPageInit('about', function (page) {
@@ -48,13 +46,7 @@ function createContentPage() {
 	return;
 }
 
-var mySwiper = myApp.swiper('.swiper-container', {
-  pagination: '.swiper-pagination',
-  paginationHide: false,
-  paginationClickable: true,
-  nextButton: '.swiper-button-next',
-  prevButton: '.swiper-button-prev',
-});
+
 
 // When the DOM is ready, initialize the scripts.
 jQuery(function ($) {

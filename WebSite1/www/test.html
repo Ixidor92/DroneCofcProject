@@ -1,52 +1,54 @@
-﻿<!DOCTYPE HTML>
-<html>
-<head>
-    <title>jQuery SlideDown() / SlideUp() With Bottom-Positioned Elements</title>
+﻿<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<div data-page="test" class="page toolbar-fixed">
+    <!-- Top Navbar-->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center">two videos</div>
+        </div>
+    </div>
+    <!-- Scrollable page content-->
+    <div class="page-content">
+        <div class="content-block">
+            <div class="content-block-inner">
 
-    <script type="text/javascript">
-        // When the DOM is ready, initialize the scripts.
-        jQuery(function( $ ){
-            // Get a reference to the container.
-            var container = $( "#container" );
-            // Bind the link to toggle the slide.
-            $( '#upy' ).click(
-                function( event ){
-                    // Prevent the default event.
-                    event.preventDefault();
-                    // Toggle the slide based on its current
-                    // visibility.
-                    if (container.is( ":visible" )){
-                        // Hide - slide up.
-                        container.slideUp( 100 );
-                    } else {
-                        // Show - slide down.
-                        container.slideDown( 100 );
-                    }
-                }
-            );
-        });
-    </script>
-</head>
-<body>
+                <div id="container">
+                    <div id="inner">
 
-    <h1>
-        jQuery SlideDown() / SlideUp() With Bottom-Positioned Elements
-    </h1>
+                            <div>EMPTY PAGE</div>
 
-    <p>
-        <a href="#" id="upy">Show Div With SlideDown()</a>
-    </p>
+                    </div>
+                </div>
 
-    <div id="container">
-        <div id="inner">
-
-            Check it out! This DIV is positioned based on its
-            very sexy Bottom and then is opened using a slide-down
-            animation effect (and closed using a slide-up)
-            animation effect.
-
+            </div>
         </div>
     </div>
 
-</body>
-</html>
+    
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+        jQuery(function ($) {
+        window.alert("inside Main");
+
+        // Get a reference to the container.
+        var container = $("#container");
+        // Bind the link to toggle the slide.
+        $("a").click(
+            function (event) {
+                // Prevent the default event.
+                event.preventDefault();
+                // Toggle the slide based on its current
+                // visibility.
+                if (container.is(":visible")) {
+                    // Hide - slide up.
+                    container.slideUp(2000);
+                } else {
+                    // Show - slide down.
+                    container.slideDown(2000);
+                }
+            }
+        );
+    });</script>
+
