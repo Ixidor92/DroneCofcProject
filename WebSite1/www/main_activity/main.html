@@ -37,26 +37,19 @@
                     
                     <!-- Scrollable page content-->
                     <div class="page-content">
-
+					
                         <div class="video-container">
                             <video id="beachVid" width="760" height="515" controls>
 								<source id= "videoSource"src= "" type="video/mp4">
 							</video>
 							<form>
-								<select id="videos" onChange="changeVideo()">
-									<option>Select a video</option>
-									<script>
-										<!--The following loop takes the variable "myArray" and creates a dropdown menu from the contents -->
-										var myArray = new Array("upOnHigh.MOV", "highGui.MOV");
-										for(i=0; i<myArray.length; i++) 
-										{	  
-											document.write('<option value="' + myArray[i] +'">' + myArray[i] + '</option>');
-										}	
-									</script>
+								<select id="videos" onChange="changeVideo(beachVid,videos.value)">
+									<option>This is a test</option>
 								</select>
+								<button type="button" onclick="createDropdown(videos)">Scan</button>
 							</form>
                         </div>
-
+						
                         <div class="gmap-container">
                             <iframe src="https://www.google.com/maps/d/embed?mid=1KhqUQNFNyPEiI5GyDVVbQYMsbB8&&ll=32.66301517807783%2C-79.92057232897491&z=19"></iframe>
                             <div class="droneIcon-container">
@@ -119,7 +112,8 @@
                                 </div>
                             </div>
 
-
+<!--this script contains the function that changes the currently displayed video upon a change in the dropDown menu -->
+				<script type="text/javascript" src="functions.js"></script>
 
 
 </div><!-- end of Page-content-->
@@ -137,36 +131,13 @@
                 <script type="text/javascript" src="/WebSite1/www/main_activity/mainScript.js"></script>
 				
 				
-				<!--this script contains the function that changes the currently displayed video upon a change in the dropDown menu -->
-				<script>
-					function changeVideo()
-					{
-						var selection = document.getElementById("videos").value;
-						beachVid.removeChild(videoSource);
-						addSourceToVideo(beachVid, selection);
-			
-						beachVid.load();
-						beachVid.play();
-					}
 				
-					<!--Helper function: appends a new video source to change it -->
-					function addSourceToVideo(element, src)
-					{
-						var source = document.createElement('source');
-		
-						source.id = "videoSource";
-						source.src = "videos/" + src;
-						source.type = "video/mp4";
-		
-						element.appendChild(source);
-					}
-		
-				</script>
 
 
             </div>
         </div>
     </div>
 
+				
 </body>
 </html> 
