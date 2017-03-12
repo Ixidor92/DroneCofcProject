@@ -36,11 +36,20 @@
                     </div>
                     <!-- Scrollable page content-->
                     <div class="page-content">
-
+					
                         <div class="video-container">
                             <div id="player"></div>
+                            <video id="beachVid" width="760" height="515" controls>
+								<source id= "videoSource"src= "" type="video/mp4">
+							</video>
+							<form>
+								<select id="videos" onChange="changeVideo(beachVid,videos.value)">
+									<option>This is a test</option>
+								</select>
+								<button type="button" onclick="createDropdown(videos)">Scan</button>
+							</form>
                         </div>
-
+						
                         <div class="gmap-container">
                             <iframe src="https://www.google.com/maps/d/embed?mid=1KhqUQNFNyPEiI5GyDVVbQYMsbB8&&ll=32.66301517807783%2C-79.92057232897491&z=19"></iframe>
                             <div class="droneIcon-container">
@@ -103,6 +112,12 @@
                                     <p>TEST PANEL</p>
                                 </div>
                             </div>
+
+
+<!--this script contains the function that changes the currently displayed video upon a change in the dropDown menu -->
+				<script type="text/javascript" src="functions.js"></script>
+
+
 </div><!-- end of Page-content-->
                     </div>
                 <!-- Path to Framework7 Library JS-->
@@ -115,5 +130,12 @@
             </div>
         </div>
     </div>
+				
+				
+				
+
+
+ 
+				
 </body>
 </html> 
