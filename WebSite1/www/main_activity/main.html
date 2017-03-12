@@ -38,22 +38,7 @@
                     <div class="page-content">
 
                         <div class="video-container">
-                            <video id="beachVid" width="760" height="515" controls>
-								<source id= "videoSource"src= "" type="video/mp4">
-							</video>
-							<form>
-								<select id="videos" onChange="changeVideo()">
-									<option>Select a video</option>
-									<script>
-										<!--The following loop takes the variable "myArray" and creates a dropdown menu from the contents -->
-										var myArray = new Array("upOnHigh.MOV", "highGui.MOV");
-										for(i=0; i<myArray.length; i++) 
-										{	  
-											document.write('<option value="' + myArray[i] +'">' + myArray[i] + '</option>');
-										}	
-									</script>
-								</select>
-							</form>
+                            <div id="player"></div>
                         </div>
 
                         <div class="gmap-container">
@@ -98,7 +83,6 @@
                             </ul>
                         </div>
 
-
                             <div id="lower">
                                 <div id="bar">
                                     <a href="#" class="item-link">
@@ -106,6 +90,8 @@
                                     </a>
                                 </div>
                                 <div id="panel">
+                                    <input type="checkbox" name="Turtle" value="Bike"> Turtle nest<br>
+
                                     <p>TEST PANEL</p>
                                     <p>TEST PANEL</p>
                                     <p>TEST PANEL</p>
@@ -117,16 +103,8 @@
                                     <p>TEST PANEL</p>
                                 </div>
                             </div>
-
-
-
-
 </div><!-- end of Page-content-->
-
-
-
                     </div>
-
                 <!-- Path to Framework7 Library JS-->
                 <script type="text/javascript" src="/WebSite1/www/scripts/framework7.min.js"></script>
                 <!-- Path to your app js-->
@@ -134,38 +112,8 @@
 
                 <script type="text/javascript" src="/WebSite1/www/scripts/my-app.js"></script>
                 <script type="text/javascript" src="/WebSite1/www/main_activity/mainScript.js"></script>
-				
-				
-				<!--this script contains the function that changes the currently displayed video upon a change in the dropDown menu -->
-				<script>
-					function changeVideo()
-					{
-						var selection = document.getElementById("videos").value;
-						beachVid.removeChild(videoSource);
-						addSourceToVideo(beachVid, selection);
-			
-						beachVid.load();
-						beachVid.play();
-					}
-				
-					<!--Helper function: appends a new video source to change it -->
-					function addSourceToVideo(element, src)
-					{
-						var source = document.createElement('source');
-		
-						source.id = "videoSource";
-						source.src = "videos/" + src;
-						source.type = "video/mp4";
-		
-						element.appendChild(source);
-					}
-		
-				</script>
-
-
             </div>
         </div>
     </div>
-
 </body>
 </html> 
