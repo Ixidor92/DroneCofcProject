@@ -44,18 +44,16 @@ iframe{
 }
 
 
-#upper {
-    position: relative;
-}
 
 #lower {
-    width: 100%;
-    position: absolute;
+    width: 0px;
+    position: fixed;
     bottom: 0;
 }
 
 #bar {
     padding: 10px;
+
 }
 
 #panel {
