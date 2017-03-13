@@ -22,7 +22,7 @@ function addSourceToVideo(element, src)
 
 function createDropdown(element)
 {
-	var myArray = new Array("upOnHigh.MOV", "highGui.MOV");
+	var myArray = new Array("exampleOne.mp4", "exampleTwo.mp4", "exampleThree.mp4", "exampleFour.mp4");
 	for(i=0; i<myArray.length; i++) 
 	{	  
 		var op = document.createElement('option');
