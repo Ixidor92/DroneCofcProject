@@ -48,8 +48,8 @@ function initMap() {
     //videoSec = getCurTime();
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 32.6630, lng: -79.9205 },
-        zoom: 15,
-        mapTypeId: 'satellite'
+        zoom: 19,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
     });
 }
 
