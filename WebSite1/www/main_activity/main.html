@@ -22,16 +22,16 @@
     <!-- Views -->
     <div class="views">
         <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main2">
+        <div class="view view-main">
             <!-- Top Navbar-->
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages toolbar-through">
-                <div data-page="main" class="page toolbar-fixed">
+            <div class="pages toolbar-through" >
+                <div data-page="main" class="page toolbar-fixed" style='background-image: url("colorful_blurry_background_ii-wallpaper-2048x1152.jpg");'>
                     <!-- Top Navbar-->
                     <div class="navbar">
-                        <div class="navbar-inner">
+                        <div class="navbar-inner" style="background-color:#aaaaaa;">
                             <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-                            <div class="center sliding">Beach Information</div>
+                            <div class="center sliding" style="font-size:20px;">Beach Information</div>
                         </div>
                     </div>
                     <!-- Scrollable page content-->
@@ -44,11 +44,8 @@
 							</video>
 							<form>
 								<select id="videos" onChange="changeVideo(beachVid,videos.value)">
-									<option>This is a test</option>
+									<option>Select Video</option>
 								</select>
-								<button type="button" onclick="createDropdown(videos)">Scan</button>
-                                <button type="button">WORK</button>
-
 							</form>
                         </div>
 						
@@ -57,6 +54,7 @@
                             <div class="droneIcon-container">
                                 <img src="/WebSite1/www/main_activity/drone-icon.png" alt="Drone Icon" style="height:40px; width:40px;">
                             </div>
+                            <div id="dronInfo">INFO HERE</div>
                         </div>
 
                         <div class="list-block rightMenu-container">
