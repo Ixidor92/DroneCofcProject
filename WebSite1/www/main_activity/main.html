@@ -30,7 +30,7 @@
                     <!-- Top Navbar-->
                     <div class="navbar">
                         <div class="navbar-inner" style="background-color:#aaaaaa;">
-                            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+                            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span style="font-size:20px; color:black">Back</span></a></div>
                             <div class="center sliding" style="font-size:20px;">Beach Information</div>
                         </div>
                     </div>
@@ -42,11 +42,7 @@
                             <video id="beachVid" width="760" height="515" controls>
 								<source id= "videoSource"src= "" type="video/mp4">
 							</video>
-							<form>
-								<select id="videos" onChange="changeVideo(beachVid,videos.value)">
-									<option>Select Video</option>
-								</select>
-							</form>
+
                         </div>
 						
 
@@ -102,18 +98,42 @@
                                     </a>
                                 </div>
                                 <div id="panel">
-                                    <input type="checkbox" name="Turtle" value="Bike"> Turtle nest<br>
 
-                                    <p>TEST PANEL</p>
-                                    <p>TEST PANEL</p>
-                                    <p>TEST PANEL</p>
-                                    <p>TEST PANEL</p>
-                                    <p>TEST PANEL</p>
-                                    <p>TEST PANEL</p>
-                                    <p>TEST PANEL</p>
-                                    <p>TEST PANEL</p>
-                                    <p>TEST PANEL</p>
-                                </div>
+                                    <div class="gmap-config-container">
+                                        <div style="font-size:large; font-weight:bold; text-align:center;">Google Maps Settings</div>
+                                        <hr>
+                                        <input type="checkbox" name="Turtle" value="Bike"> Turtle nest<br>
+                                        <form>
+                                            <a href="#" onclick="setSatellite()" class="button button-round button-fill">Satellite View</a>
+                                            <br>
+                                            <a href="#" onclick="setTerrain()" class="button button-round button-fill">Terrain View</a>
+                                            <br>
+                                        </form>
+                                    
+                                        <div class="video-config-container">
+                                            <div style="font-size:large; font-weight:bold; text-align: center;">Video Settings</div>
+
+
+
+
+
+
+
+                                            <form>
+                                                <select id="videos" onChange="changeVideo(beachVid,videos.value)">
+                                                    <option>Select Video</option>
+                                                </select>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                    
+                                    
+
+
+
+
+                                    </div>
                             </div>
 
 

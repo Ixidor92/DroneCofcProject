@@ -2815,6 +2815,7 @@ html.pixel-ratio-3 .list-block .item-link.list-button:after {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    background-color: #aaaaaa;
 }
 
 .list-block .list-block-label {
