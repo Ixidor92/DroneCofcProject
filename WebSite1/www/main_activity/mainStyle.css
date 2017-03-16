@@ -13,6 +13,33 @@
 
 }
 
+.slidePresentation-container{
+    position: absolute;
+    height:530px; 
+    width:80%;
+    border: 5px solid red;
+    top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+    visibility:hidden;
+}
+
+
+.slide-menu-container{
+    position:absolute;
+    right:5px;
+    width:120px;
+    top:400px;
+}
+
+
+
+
+
 .gmap-container{
     position:  absolute;
 
@@ -62,7 +89,7 @@
     width:350px;
     top:0;
     right:0;
-    padding-right:5px;
+    padding-right:0px;
     margin-top: 50px;
 	margin-right: 2px;
 }

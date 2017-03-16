@@ -29,30 +29,64 @@
                 </div>
                 <div class="leftpanel-menu">Modules</div>
             </a>
-            <a href="index.html" class="list-block item-link item-title">
+
+
+            mainView.router.load({
+            url: 'beachInfo.html',
+            context: {
+            beachName: 'Folly Beach'
+            address: null
+            state: 'South Carolina',
+            squareMiles: '18.88'
+            Population: '2,617 (2010)'
+            }
+            })
+
+
+            <header>
+                <h1>{{beachName}}</h1>
+            </header>
+            <div class="leftpanel-img">
+                <img src="/www/img/trending_up_white.png" alt="HTML5 Icon" style="width:25px;height:25px;">
+            </div>
+
+
+
+                <div class="">Hello my name is {{name}}, and my phone number is {{tel}}</div>
+                <br>
                 <div class="leftpanel-img">
                     <img src="/www/img/trending_up_white.png" alt="HTML5 Icon" style="width:25px;height:25px;">
                 </div>
-                <div class="leftpanel-menu">Progress</div>
-            </a>
-            <a href="index.html" class="list-block item-link item-title">
-                <div class="leftpanel-img">
-                    <img src="/www/img/settings_white.png" alt="HTML5 Icon" style="width:25px;height:25px;">
-                </div>
-                <div class="leftpanel-menu">Settings</div>
-            </a>
-            <a href="help.html" class="list-block item-link item-title">
-                <div class="leftpanel-img">
-                    <img src="/www/img/help_outline_white.png" alt="HTML5 Icon" style="width:25px;height:25px;">
-                </div>
-                <div class="leftpanel-menu">Help</div>
-            </a>
-            <a href="about.html" class="list-block item-link item-title">
-                <div class="item-insner">
-                    <div class="leftpanel-menu" style="margin-left:5px; margin-top:35px;">Logout</div>
-                </div>
-            </a>
-        </div>
+                <div class="email">Email: {{email}}</div>
+                <br>
+                <div>Address: {{address}}</div>
+
+
+
+                <a href="index.html" class="list-block item-link item-title">
+                    <div class="leftpanel-img">
+                        <img src="/www/img/trending_up_white.png" alt="HTML5 Icon" style="width:25px;height:25px;">
+                    </div>
+                    <div class="leftpanel-menu">Progress</div>
+                </a>
+                <a href="index.html" class="list-block item-link item-title">
+                    <div class="leftpanel-img">
+                        <img src="/www/img/settings_white.png" alt="HTML5 Icon" style="width:25px;height:25px;">
+                    </div>
+                    <div class="leftpanel-menu">Settings</div>
+                </a>
+                <a href="help.html" class="list-block item-link item-title">
+                    <div class="leftpanel-img">
+                        <img src="/www/img/help_outline_white.png" alt="HTML5 Icon" style="width:25px;height:25px;">
+                    </div>
+                    <div class="leftpanel-menu">Help</div>
+                </a>
+                <a href="about.html" class="list-block item-link item-title">
+                    <div class="item-insner">
+                        <div class="leftpanel-menu" style="margin-left:5px; margin-top:35px;">Logout</div>
+                    </div>
+                </a>
+</div>
         <div class="tachl-logo-image">
             <img src="/www/img/tachl_logo.png" alt="HTML5 Icon" style="width:25px;height:25px;">
         </div>

@@ -81,10 +81,7 @@ function getCurTime() {
     var yourLat = Ycoords[videoSec]
     var yourLng = Xcoords[videoSec]
 
-    
-
-
-
+   
     var latLng = new google.maps.LatLng(yourLat, yourLng); //Makes a latlng
     map.panTo(latLng); //Make map global
 
@@ -99,7 +96,35 @@ function setCurTime() {
     vid.currentTime = 5;
 }
 
+var srcChanged = 0;
+var toggler = 0;
+function toggleSlide() {
 
+    if (srcChanged == 1) {
+        $("#myiframe").attr("src", "https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/embed?start=false&loop=false&delayms=3000");
+    }
+    toggler++;
+    if (toggler % 2 == 0)
+    {
+        $('.slidePresentation-container').css('visibility', 'hidden');
+
+    }
+    else {
+        $('.slidePresentation-container').css('visibility', 'visible');
+
+    }
+    //   toggle++;
+    srcChanged = 0;
+}
+
+function editSlide() {
+
+
+    $("#myiframe").attr("src", "https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/edit#slide=id.g2125cc5467_2_10");
+    $('.slidePresentation-container').css('visibility', 'visible');
+
+    srcChanged = 1;
+}
 
 
 function changeVideo(element, choice) {
