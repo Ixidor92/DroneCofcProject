@@ -47,8 +47,29 @@
                 <h1>{{beachName}}</h1>
             </header>
             <div class="leftpanel-img">
-                <img src="/www/img/trending_up_white.png" alt="HTML5 Icon" style="width:25px;height:25px;">
+                <img src="beack_pic.png" style="width:25px;height:25px;">
             </div>
+            <div>Address:{{address}}</div>
+            <div>State: {{state}} </div>
+            <div>{{beachName}} has a population of {{Population}}, with a size of {{squareMiles}} quare miles</div>
+
+
+              
+
+            mainView.router.load({
+            url: 'beachInfo.html',
+            context: {
+            beachName: 'Folly Beach',
+            address: null,
+            state: 'South Carolina',
+            squareMiles: '18.88',
+            Population: '2,617 (2010)',
+            }
+            })
+
+
+
+
 
 
 

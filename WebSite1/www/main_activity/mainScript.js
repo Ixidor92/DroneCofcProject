@@ -52,7 +52,10 @@ function initMap() {
         zoom: 19,
         mapTypeId: google.maps.MapTypeId.TERRAIN
     });
-    loadKmlLayer('https://dl.dropboxusercontent.com/s/uwyr9ogsont4qiw/FollyBeachMap.kml?dl=1');
+    //loadKmlLayer('https://dl.dropboxusercontent.com/s/uwyr9ogsont4qiw/FollyBeachMap.kml?dl=1');
+    loadKmlLayer('https://dl.dropboxusercontent.com/s/vlomruiknr1ydfo/folly_shoreline.shp.kml?dl=1');
+
+    //https://www.dropbox.com/s/vlomruiknr1ydfo/folly_shoreline.shp.kml?dl=1
 }
 
 
