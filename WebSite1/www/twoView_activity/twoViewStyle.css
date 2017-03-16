@@ -1,0 +1,60 @@
+.videoLeftContainer{
+	position: absolute;
+	height: 525px;
+	width: 800px;
+	border: 5px solid #000000;
+    background-color:black;
+	top: 15px;
+	left: 15px;
+}
+
+.videoRightContainer{
+	position: absolute;
+	margin-right: 220px;
+	height: 525px;
+	width: 800px;
+	border: 5px solid #000000;
+    background-color:black;
+	top: 15px;
+	right: 0px;
+}
+
+.fullContainer{
+	position: relative;
+	width: 1600px;
+	height: 600px;
+	
+}
+
+.controls{
+	position: absolute;
+	width: 400 px;
+	height: 50 px;
+	top: 575px;
+	left: 300px;
+}
+
+iframe{
+    height:100%;
+    width:100%;
+}
+
+
+
+#lower {
+    width: 0px;
+    position: fixed;
+    bottom: 0;
+}
+
+#bar {
+    padding: 10px;
+
+}
+
+#panel {
+    display: none;
+/*    height: 100px;*/
+    background-color: #aaaaaa;
+    padding: 10px;
+}
