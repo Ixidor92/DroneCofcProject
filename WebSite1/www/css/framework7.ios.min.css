@@ -2471,7 +2471,7 @@ html.pixel-ratio-3 .list-block ul:before {
     bottom: 0;
     right: auto;
     top: auto;
-    height: 1px;
+    height: 0px;
     width: 100%;
     background-color: #c8c7cc;
     display: block;
@@ -2685,7 +2685,7 @@ html.pixel-ratio-3 .list-block ul:after {
         bottom: 0;
         right: auto;
         top: auto;
-        height: 1px;
+        height: 0px;
         width: 100%;
         background-color: #c8c7cc;
         display: block;
@@ -3970,7 +3970,6 @@ html.pixel-ratio-3 .card-footer:before {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.4);
     z-index: 13000;
     visibility: hidden;
     opacity: 0;
