@@ -28,8 +28,7 @@ myApp.onPageInit('main', function (page)
     });
 
 
-createDropdown(videos);
-
+	createDropdown(videos);
     initMap();
 
 
@@ -104,7 +103,6 @@ function setCurTime() {
 
 
 function changeVideo(element, choice) {
-    var selection = document.getElementById("videos").value;
     element.removeChild(videoSource);
     addSourceToVideo(element, choice);
 

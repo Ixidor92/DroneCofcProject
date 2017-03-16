@@ -1,0 +1,62 @@
+﻿<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+
+<div data-page="twoView" class="page toolbar-fixed" style='background-image: url("colorful_blurry_background_ii-wallpaper-2048x1152.jpg");'>
+    <!-- Top Navbar-->
+    <div class="navbar">
+        <div class="navbar-inner" style="background-color:#aaaaaa;">
+            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center">two videos</div>
+        </div>
+    </div>
+    <!-- Scrollable page content-->
+    <div class="page-content">
+        <div class="content-block">
+            <div class="content-block-inner">
+
+                <div id="container">
+                    <div>
+
+                            <div class="videoLeftContainer">
+								<video id="leftVid" width="760" height="515" >
+									<source id= "leftSource"src= "" type="video/mp4">
+								</video>
+								<form>
+									<select id="leftVidSelect" onChange="changeLeftVideo(leftVid,leftSource,leftVidSelect.value)">
+										<option>Select Video</option>
+									</select>
+								</form>
+							</div>
+							
+							<div class="videoRightContainer">
+								<video id="rightVid" width="760" height="515">
+									<source id="rightSource" src="" type="video/mp4">
+								</video>
+								<form>
+									<select id="rightVidSelect" onChange="changeRightVideo(rightVid,rightSource,rightVidSelect.value)">
+										<option>Select Video</option>
+									</select>
+								</form>
+							</div>
+							
+							
+							<div class="controls">
+								<button type="button" onclick="syncPlay()">Play</button>
+								<button type="button" onclick="syncStop()">Stop</button>
+								<button type="button" onclick="syncLoad()">Reload</button>
+								<button type="button" onclick="createDropdown(leftVidSelect)">Load Left</button>
+								<button type="button" onclick="createDropdown(rightVidSelect)">Load Right</button>
+							</div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="twoViewScript.js"></script>
+
