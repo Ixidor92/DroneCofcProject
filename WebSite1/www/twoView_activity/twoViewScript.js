@@ -1,3 +1,13 @@
+var lefty;
+var righty;
+myApp.onPageInit('twoView', function (page)
+{
+    createDropdown(leftVidSelect)
+    createDropdown(rightVidSelect)
+
+});
+
+
 jQuery(function ($) {
 
         // Get a reference to the container.
@@ -25,8 +35,8 @@ jQuery(function ($) {
 
 function syncPlay()
 {
-	var lefty = document.getElementById("leftVid");
-	var righty = document.getElementById("rightVid");
+	lefty = document.getElementById("leftVid");
+	righty = document.getElementById("rightVid");
 	
 	lefty.play();
 	righty.play();
@@ -34,17 +44,28 @@ function syncPlay()
 
 function syncStop()
 {
-	var lefty = document.getElementById("leftVid");
-	var righty = document.getElementById("rightVid");
+	//var lefty = document.getElementById("leftVid");
+	//var righty = document.getElementById("rightVid");
 	
 	lefty.pause();
 	righty.pause();
 }
 
+
+function sliderPlay(sec) {
+    //var lefty = document.getElementById("leftVid");
+    //var righty = document.getElementById("rightVid");
+    lefty.currentTime = sec;
+    righty.currentTime = sec;
+    lefty.play();
+    righty.play();
+    
+}
+
 function syncLoad()
 {
-	var lefty = document.getElementById("leftVid");
-	var righty = document.getElementById("rightVid");
+	//lefty = document.getElementById("leftVid");
+	//righty = document.getElementById("rightVid");
 	
 	lefty.load();
 	righty.load();

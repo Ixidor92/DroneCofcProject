@@ -4,8 +4,8 @@
     <!-- Top Navbar-->
     <div class="navbar">
         <div class="navbar-inner" style="background-color:#aaaaaa;">
-            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center">two videos</div>
+            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span style="font-size:20px; color:black">Back</span></a></div>
+            <div class="center" style="font-size:20px;">2 VIEW</div>
         </div>
     </div>
     <!-- Scrollable page content-->
@@ -17,7 +17,7 @@
                     <div>
 
                             <div class="videoLeftContainer">
-								<video id="leftVid" width="760" height="515" >
+								<video id="leftVid" width="652" height="425" >
 									<source id= "leftSource"src= "" type="video/mp4">
 								</video>
 								<form>
@@ -28,7 +28,7 @@
 							</div>
 							
 							<div class="videoRightContainer">
-								<video id="rightVid" width="760" height="515">
+								<video id="rightVid" width="652" height="425">
 									<source id="rightSource" src="" type="video/mp4">
 								</video>
 								<form>
@@ -37,15 +37,18 @@
 									</select>
 								</form>
 							</div>
-							
+
+
+
 							
 							<div class="controls">
+                                <input style="width:400px" type="range" min="0" max="100" onchange="sliderPlay(this.value)"/>
+
 								<button type="button" onclick="syncPlay()">Play</button>
 								<button type="button" onclick="syncStop()">Stop</button>
 								<button type="button" onclick="syncLoad()">Reload</button>
-								<button type="button" onclick="createDropdown(leftVidSelect)">Load Left</button>
-								<button type="button" onclick="createDropdown(rightVidSelect)">Load Right</button>
 							</div>
+
 
                     </div>
                 </div>
