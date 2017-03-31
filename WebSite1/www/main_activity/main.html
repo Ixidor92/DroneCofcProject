@@ -1,187 +1,82 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>My App</title>
-    <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="/WebSite1/www/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="/WebSite1/www/css/framework7.ios.colors.min.css">
-    <!-- Path to Font Awesome Library CSS-->
-    <link rel="stylesheet" href="/WebSite1/www/css/font-awesome.min.css">
-    <!-- Path to custom app styles-->
-    <link rel="stylesheet" href="/WebSite1/www/main_activity/mainStyle.css">
-	<link rel="stylesheet" href="/WebSite1/www/twoView_activity/twoViewStyle.css">
+﻿<div data-page="main" class="page" style='background-image: url("colorful_blurry_background_ii-wallpaper-2048x1152.jpg");'>
+    <!-- Top Navbar-->
+    <div class="navbar">
 
+        <div class="navbar-inner" style="background-color:#aaaaaa;">
 
-</head>
-<body>
-    <!-- Status bar overlay for full screen mode (PhoneGap) -->
-    <div class="statusbar-overlay"></div>
-    <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages toolbar-through" >
-                <div data-page="main" class="page toolbar-fixed" style='background-image: url("colorful_blurry_background_ii-wallpaper-2048x1152.jpg");'>
-                    <!-- Top Navbar-->
-                    <div class="navbar">
-                        <div class="navbar-inner" style="background-color:#aaaaaa;">
-                            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span style="font-size:20px; color:black">Back</span></a></div>
-                            <div class="center" style="font-size:20px;">Beach Information</div>
-                        </div>
-                    </div>
-                    <!-- Scrollable page content-->
-                    <div class="page-content">
-					
-                        <div class="video-container">
-                            <div id="player"></div>
-                            <video id="beachVid" width="760" height="515" controls>
-								<source id= "videoSource"src= "" type="video/mp4">
-							</video>
+            <div class="tabLinks-container">
+                <a href="../index_activity/index.html" class="item-link">
+                    <img src="../main_activity/home-icon.png" alt="HTML5 Icon" style="height:37px;">
+                </a>
+                <a href="../twoView_activity/twoView.html" class="item-link">
+                    <img src="../main_activity/twoview-icon.png" alt="HTML5 Icon" style="height:37px;">
+                </a>
 
-                        </div>
-						
+            </div>
 
-
-                        <div class="gmap-container">
-                            <div id="map" style="height:100%; width:100%"></div>
-                            <div class="droneIcon-container">
-                                <img src="/WebSite1/www/main_activity/drone-icon.png" alt="Drone Icon" style="height:40px; width:40px;">
-                            </div>
-                        </div>
-
-
-                        <div class="list-block rightMenu-container">
-                            <ul>
-                                <li>
-                                    <a href="/WebSite1/www/index_activity/index.html" class="item-link">
-                                        <div class="item-content">
-                                            <img src="/WebSite1/www/main_activity/home-icon.png" alt="HTML5 Icon" style="width:80px;height:80px; right:200px;">
-                                            <div class="item-inner">
-                                                <div class="item-title" Style="left:20px;">Home</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/WebSite1/www/main_activity/main.html" class="item-link">
-                                        <div class="item-content">
-                                            <img src="/WebSite1/www/main_activity/information-icon.png" alt="HTML5 Icon" style="width:80px;height:80px;">
-                                            <div class="item-inner">
-                                                <div class="item-title" Style="left:20px;">Beach</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/WebSite1/www/twoView_activity/twoView.html" class="item-link">
-                                        <div class="item-content">
-                                            <img src="/WebSite1/www/main_activity/twoview-icon.png" alt="HTML5 Icon" style="width:80px;height:80px;">
-                                            <div class="item-inner">
-                                                <div class="item-title" Style="left:20px;">2 View</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                        <div class="slide-menu-container">
-                            <a href="#" onclick="toggleSlide()" class="button button-fill color-red">Presentation Mode</a>
-                            <a href="#" onclick="editSlide()" class="button button-fill color-blue">Edit Slide</a>
-                            <a href="#" onclick="" class="button button-fill color-green">Open/Close Show</a>
-
-
-                                                    
-                           
-                        </div>
-
-
-                        <div class="slidePresentation-container"> 
-                        
-                <iframe id="myiframe" src="https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                            <!--<iframe id="myiframe" src="https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/edit#slide=id.g2125cc5467_2_10" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>-->
-
-                        
-                        </div>
+            <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span style="font-size:20px; color:black">Back</span></a></div>
+            <div class="center" style="font-size:20px;">Beach Information
+            
 
 
 
-                            <div id="lower">
-                                <img src="/WebSite1/www/main_activity/settings.png" alt="HTML5 Icon" style="width:80px;height:80px; top:300px; right:20px;" id="toggle">
-
-                                <div id="bar">
-                                    <a href="#" class="item-link">
-                                    </a>
-                                </div>
-                                <div id="panel">
-
-                                    <div class="gmap-config-container">
-                                        <div style="font-size:large; font-weight:bold; text-align:center;">Google Maps Settings</div>
-                                        <hr>
-                                        <input type="checkbox" name="Turtle" value="Bike"> Turtle nest<br>
-                                        <form>
-                                            <a href="#" onclick="setSatellite()" class="button button-round button-fill">Satellite View</a>
-                                            <br>
-                                            <a href="#" onclick="setTerrain()" class="button button-round button-fill">Terrain View</a>
-                                            <br>
-                                        </form>
-                                    
-                                        <div class="video-config-container">
-                                            <div style="font-size:large; font-weight:bold; text-align: center;">Video Settings</div>
-
-
-
-
-
-
-
-                                            <form>
-                                                <select id="videos" onChange="changeVideo(beachVid,videos.value)">
-                                                    <option>Select Video</option>
-                                                </select>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                    
-                                    
-
-
-
-
-                                    </div>
-                            </div>
-
-
-<!--this script contains the function that changes the currently displayed video upon a change in the dropDown menu -->
-				<script type="text/javascript" src="functions.js"></script>
-
-
-</div><!-- end of Page-content-->
-                    </div>
-                <!-- Path to Framework7 Library JS-->
-                <script type="text/javascript" src="/WebSite1/www/scripts/framework7.min.js"></script>
-                <!-- Path to your app js-->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-                <script type="text/javascript" src="/WebSite1/www/scripts/my-app.js"></script>
-                <script type="text/javascript" src="/WebSite1/www/main_activity/mainScript.js"></script>
             </div>
         </div>
     </div>
-				
-				
-				
+    <!--End Navbar-->
 
+    <!-- Scrollable page content-->
+    <div class="page-content">
+        <div class="video-container">
+            <div id="player"></div>
+            <video id="beachVid" style="height:100%; width:100%">
+                <source id="videoSource" src="" type="video/mp4">
+            </video>
+        </div>
+        <div class="info-container">
+        </div>
+        <div class="gmap-container">
+            <div id="map" style="height:100%; width:100%"></div>
+            <div class="droneIcon-container">
+                <img src="/WebSite1/www/main_activity/drone-icon.png" alt="Drone Icon" style="height:40px; width:40px;">
+            </div>
+        </div>
 
- 
-				
-</body>
-</html> 
+        <div class="slide-menu-container">
+            <a href="#" onclick="toggleSlide()" class="button button-fill color-red">Presentation Mode</a>
+            <a href="#" onclick="editSlide()" class="button button-fill color-blue">Edit Slide</a>
+            <a href="#" onclick="" class="button button-fill color-green">Open/Close Show</a>
+        </div>
+        <div class="slidePresentation-container">
+            <iframe id="myiframe" src="https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+        <div id="lower">
+            <img src="/WebSite1/www/main_activity/settings.png" alt="HTML5 Icon" style="width:80px;height:80px; top:300px; right:20px;" id="toggle">
+            <div id="bar">
+                <a href="#" class="item-link">
+                </a>
+            </div>
+            <div id="panel">
+                <div class="gmap-config-container">
+                    <div style="font-size:large; font-weight:bold; text-align:center;">Google Maps Settings</div>
+                    <hr>
+                    <input type="checkbox" name="Turtle" value="Bike"> Turtle nest<br>
+                    <form>
+                        <a href="#" onclick="setSatellite()" class="button button-round button-fill">Satellite View</a>
+                        <br>
+                        <a href="#" onclick="setTerrain()" class="button button-round button-fill">Terrain View</a>
+                        <br>
+                    </form>
+                    <div class="video-config-container">
+                        <div style="font-size:large; font-weight:bold; text-align: center;">Video Settings</div>
+                        <form>
+                            <select id="videos" onChange="changeVideo(beachVid,videos.value)">
+                                <option>Select Video</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

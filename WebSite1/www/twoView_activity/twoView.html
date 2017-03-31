@@ -1,65 +1,64 @@
-﻿<!-- We don't need full layout here, because this page will be parsed with Ajax-->
-
-<div data-page="twoView" class="page toolbar-fixed" style='background-image: url("colorful_blurry_background_ii-wallpaper-2048x1152.jpg");'>
+﻿<div data-page="twoView" class="page toolbar-fixed" style='background-image: url("colorful_blurry_background_ii-wallpaper-2048x1152.jpg");'>
     <!-- Top Navbar-->
     <div class="navbar">
         <div class="navbar-inner" style="background-color:#aaaaaa;">
+            <div class="tabLinks-container">
+                <a href="../index_activity/index.html" class="item-link">
+                    <img src="../main_activity/home-icon.png" alt="HTML5 Icon" style="height:37px;">
+                </a>
+                <a href="../main_activity/main.html" class="item-link">
+                    <img src="../main_activity/oneView.png" alt="HTML5 Icon" style="height:37px;">
+                </a>
+
+            </div>
+
             <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span style="font-size:20px; color:black">Back</span></a></div>
             <div class="center" style="font-size:20px;">2 VIEW</div>
         </div>
     </div>
+
+
+
     <!-- Scrollable page content-->
     <div class="page-content">
         <div class="content-block">
             <div class="content-block-inner">
-
                 <div id="container">
                     <div>
+                        <div class="videoLeftContainer">
+                            <video id="leftVid" style="height:100%; width:100%">
+                                <source id="leftSource" src="" type="video/mp4">
+                            </video>
+                            <form>
+                                <select id="leftVidSelect" onChange="changeLeftVideo(leftVid,leftSource,leftVidSelect.value)">
+                                    <option>Select Video</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="videoRightContainer">
+                            <video id="rightVid" style="height:100%; width:100%">
+                                <source id="rightSource" src="" type="video/mp4">
+                            </video>
+                            <form>
+                                <select id="rightVidSelect" onChange="changeRightVideo(rightVid,rightSource,rightVidSelect.value)">
+                                    <option>Select Video</option>
+                                </select>
+                            </form>
+                        </div>
 
-                            <div class="videoLeftContainer">
-								<video id="leftVid" width="652" height="425" >
-									<source id= "leftSource"src= "" type="video/mp4">
-								</video>
-								<form>
-									<select id="leftVidSelect" onChange="changeLeftVideo(leftVid,leftSource,leftVidSelect.value)">
-										<option>Select Video</option>
-									</select>
-								</form>
-							</div>
-							
-							<div class="videoRightContainer">
-								<video id="rightVid" width="652" height="425">
-									<source id="rightSource" src="" type="video/mp4">
-								</video>
-								<form>
-									<select id="rightVidSelect" onChange="changeRightVideo(rightVid,rightSource,rightVidSelect.value)">
-										<option>Select Video</option>
-									</select>
-								</form>
-							</div>
-
-
-
-							
-							<div class="controls">
-                                <input style="width:400px" type="range" min="0" max="100" onchange="sliderPlay(this.value)"/>
-
-								<button type="button" onclick="syncPlay()">Play</button>
-								<button type="button" onclick="syncStop()">Stop</button>
-								<button type="button" onclick="syncLoad()">Reload</button>
-							</div>
+                        <div class="controls">
+                            <input style="width:400px" type="range" min="0" max="100" onchange="sliderPlay(this.value)" />
+                            <div>
+                                <button type="button" onclick="syncPlay()">Play</button>
+                                <button type="button" onclick="syncStop()">Stop</button>
+                                <button type="button" onclick="syncLoad()">Reload</button>
+                            </div>
+                        </div>
 
 
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
-    
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<script src="twoViewScript.js"></script>
-

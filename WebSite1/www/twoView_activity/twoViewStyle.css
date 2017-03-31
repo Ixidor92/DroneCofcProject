@@ -1,36 +1,35 @@
 .videoLeftContainer{
-	position: absolute;
-	height: 425px;
-	width: 652px;
+	position: fixed;
+	height: 70%;
+	width: 49%;
 	border: 5px solid #000000;
     background-color:black;
 	margin-top: 50px;
     left:5px;
+    top: 0;
 }
 
 .videoRightContainer{
-	position: absolute;
-	height: 425px;
-	width: 652px;
+	position: fixed;
+	height: 70%;
+	width: 49%;
 	border: 5px solid #000000;
     background-color:black;
 	margin-top: 50px;
     right:5px;
+    top: 0;
 }
 
-.fullContainer{
-	position: relative;
-	width: 1600px;
-	height: 600px;
-	
-}
 
 .controls{
-	position: absolute;
-	width: 400px;
-	height: 50px;
-	top: 535px;
-	left: 500px;
+	position: fixed;
+	bottom: 5px;
+	left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: black;
+    padding: 1%;
+
 }
 
 iframe{

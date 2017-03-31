@@ -53,3 +53,22 @@ background-image: url("colorful_blurry_background_ii-wallpaper-2048x1152.jpg");
   background: #007aff;
   border-color: #007aff;
 } 
+
+
+
+.cofclogo-container{
+    height:auto;
+    width:240px;
+    position: absolute;
+    top:5px;
+    left:5px;
+}
+
+.cofcHeaderTittle{
+    position:absolute;
+    top: 100px;
+    left:50%;
+    transform: translateX(-50%);
+    font-size:18px;
+
+}

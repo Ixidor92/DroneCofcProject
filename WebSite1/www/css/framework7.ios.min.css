@@ -965,7 +965,7 @@ p {
 }
 
 .view {
-    overflow: hidden;
+    overflow: auto;
     box-sizing: border-box;
 }
 
@@ -975,6 +975,7 @@ p {
     height: 100%;
     overflow: hidden;
     background: #000;
+    margin-top: -5px;
 }
 
 .page {

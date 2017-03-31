@@ -3,11 +3,11 @@
 
 
 .video-container{
-    --position: relative;
+    position: fixed;
 	margin-top: 50px;
-	margin-left: 220px;
-    height:515px; 
-    width:760px;
+	right: 5px;
+    height:89%; 
+    width: 57%;
     border: 5px solid #000000;
     background-color:black;
 
@@ -41,16 +41,14 @@
 
 
 .gmap-container{
-    position:  absolute;
-
-    top:0px;
-   	margin-top: 50px;
-	margin-left: 2px;
-
-        height:300px; 
-    width:190px;
-   -- border:6px;
-   border: 5px solid #000000;
+    position: fixed;
+    /* top: 0px; */
+    margin-top: 50px;
+    /* margin-left: 2px; */
+    height: 45%;
+    width: 40%;
+    left: 5px;
+    border: 5px solid #000000;
 }
 .gmap-config-container{
     flex: 1;
@@ -80,7 +78,7 @@
 .droneIcon-container{
     position:  absolute;
     top:45%;
-    left:38%;
+    left:45%;
 }
 
 .rightMenu-container{
@@ -114,7 +112,14 @@ iframe{
 
 #panel {
     display: none;
-/*    height: 100px;*/
     background-color: #aaaaaa;
     padding: 10px;
+}
+
+
+
+.tabLinks-container{
+    position: absolute;
+    right: 0px;
+    padding: 30px;
 }

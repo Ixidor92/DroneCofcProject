@@ -2,6 +2,7 @@
 var vid;
 var Xcoords = [];
 var Ycoords = [];
+var droneHeight = [];
 
 myApp.onPageInit('main', function (page)
 {
@@ -174,6 +175,29 @@ function changeVideo(element, choice) {
                 var splitXYcoords = gpsCoords.split(",");
                 Xcoords.push(splitXYcoords[0])
                 Ycoords.push(splitXYcoords[1])
+
+                var firstPos = lines[startIndex].indexOf(":");
+                var lastPos = (lines[startIndex].length)-1;
+
+
+                //console.log(lines[startIndex][firstPos+1])
+                //console.log(lines[startIndex][lastPos-1])
+                //console.log(lines[startIndex][firstPos])
+                var gpsHeight = lines[startIndex].slice(firstPos + 1, lastPos);
+                droneHeight.push(gpsHeight);
+
+                //console.log(droneHeight[1]);
+                //console.log(Xcoords[1]);
+                //console.log(Ycoords[1]);
+
+
+
+
+
+
+
+
+
                 startIndex = startIndex + 6;
             }
         }
