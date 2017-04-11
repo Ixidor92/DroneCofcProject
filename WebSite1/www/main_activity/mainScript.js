@@ -3,6 +3,8 @@ var vid;
 var Xcoords = [];
 var Ycoords = [];
 var droneHeight = [];
+var droneTime = [];
+var droneDate = [];
 
 myApp.onPageInit('main', function (page)
 {
@@ -69,9 +71,28 @@ function initMap() {
 function gmapLoop() {
     setInterval(function () {
         vid = document.getElementById("beachVid");
+        var videoSec = getCurTime();
 
-        getCurTime();
-    }, 2000);
+/*      var Xcoords = [];
+        var Ycoords = [];
+        var droneHeight = [];
+        var droneTime = [];
+        var droneDate = [];
+*/
+        
+
+        $$("div#droneDate").text('Date: ' + droneDate[videoSec]);
+        $$("div#droneHeight").text('Altitude: ' + droneHeight[videoSec]+' Meters');
+        $$("div#droneTime").text('Time: ' + droneTime[videoSec]);
+        $$("div#droneCoords").text('GPS: (' + Xcoords[videoSec] + ',' + Ycoords[videoSec]+')');
+
+
+
+
+
+
+
+    }, 1000);
 }
 
 function setTerrain() {
@@ -100,7 +121,7 @@ function getCurTime() {
    // map.setCenter({ lat: yourLat, lng: yourLng })
 
 
-    //return videoSec;
+    return videoSec;
 
 }
 
@@ -166,32 +187,44 @@ function changeVideo(element, choice) {
     $.ajax({
         url: srtURL,
         success: function (file_content) {
+
+            Xcoords = [];
+            Ycoords = [];
+            droneHeight = [];
+            droneTime = [];
+            droneDate = [];
+
             var lines = file_content.split("\n");
             var startIndex = 3;
             while (lines[startIndex] != null) {
+                //Parse and get Coords.
                 var firstPos = lines[startIndex].indexOf("(");
                 var lastPos = lines[startIndex].lastIndexOf(")");
                 var gpsCoords = lines[startIndex].slice(firstPos + 1, lastPos - 3);
                 var splitXYcoords = gpsCoords.split(",");
                 Xcoords.push(splitXYcoords[0])
                 Ycoords.push(splitXYcoords[1])
+                //end of coords
 
+                //Parse and get height
                 var firstPos = lines[startIndex].indexOf(":");
                 var lastPos = (lines[startIndex].length)-1;
-
-
-                //console.log(lines[startIndex][firstPos+1])
-                //console.log(lines[startIndex][lastPos-1])
-                //console.log(lines[startIndex][firstPos])
                 var gpsHeight = lines[startIndex].slice(firstPos + 1, lastPos);
                 droneHeight.push(gpsHeight);
+                //end of height
 
-                //console.log(droneHeight[1]);
-                //console.log(Xcoords[1]);
-                //console.log(Ycoords[1]);
+                //Parse time
+                var newIndex = startIndex - 1;
+                var firstPos = (lines[newIndex].indexOf(":"))-2;
+                var lastPos = firstPos + 8;
+                droneTime.push(lines[newIndex].slice(firstPos, lastPos));
+                //end of time
 
-
-
+                //Parse date
+                var firstPos = (lines[newIndex].indexOf(")")) + 2;
+                var lastPos = firstPos + 10;
+                droneDate.push(lines[newIndex].slice(firstPos, lastPos));
+                //end of date
 
 
 
@@ -211,7 +244,7 @@ function addSourceToVideo(element, src) {
     var source = document.createElement('source');
 
     source.id = "videoSource";
-    source.src = "/WebSite1/www/main_activity/follyVideos/" + src;
+    source.src = "../main_activity/follyVideos/" + src;
     source.type = "video/mp4";
 
     element.appendChild(source);
@@ -266,5 +299,31 @@ function doPan() {
         if (queued != null) {
             panTo(queued[0], queued[1]);
         }
+    }
+}
+
+
+
+function pixelSearch() {
+    //document.addEventListener('DOMContentLoaded', function () {
+        var v = document.getElementById('beachVid');
+        var canvas = document.getElementById('c');
+        var context = canvas.getContext('2d');
+
+        var cw = Math.floor(canvas.clientWidth);
+        var ch = Math.floor(canvas.clientHeight);
+        canvas.width = cw;
+        canvas.height = ch;
+
+        v.addEventListener('play', function () {
+            draw(this, context, cw, ch);
+        }, false);
+
+    //}, false);
+
+    function draw(v, c, w, h) {
+        if (v.paused || v.ended) return false;
+        c.drawImage(v, 0, 0, w, h);
+        setTimeout(draw, 20, v, c, w, h);
     }
 }

@@ -11,3 +11,5 @@ var mainView = myApp.addView('.view-main', {
 
 // Generate dynamic page
 var dynamicPageIndex = 0;
+
+
