@@ -317,6 +317,9 @@ function pixelSearch() {
 
         v.addEventListener('play', function () {
             draw(this, context, cw, ch);
+            //var imageData = context.getImageData(0,0,20,20);
+            //console.log(imageData)
+
         }, false);
 
     //}, false);
@@ -324,6 +327,11 @@ function pixelSearch() {
     function draw(v, c, w, h) {
         if (v.paused || v.ended) return false;
         c.drawImage(v, 0, 0, w, h);
+        var data = c.getImageData(0, 0, 10, 10).data;
+        console.log(data)
         setTimeout(draw, 20, v, c, w, h);
     }
+
+
+
 }
