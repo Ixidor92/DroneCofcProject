@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="../css/framework7.ios.min.css">
+    <link rel="stylesheet" href="../css/framework7.ios.colors.min.css">
+    <!-- Path to Font Awesome Library CSS-->
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <!-- Path to custom app styles-->
+    <link rel="stylesheet" href="../index_activity/indexStyle.css">
+    <link rel="stylesheet" href="../main_activity/mainStyle.css">
+    <link rel="stylesheet" href="../twoView_activity/twoViewStyle.css">
+</head>
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <img src="../index_activity/BeachdroneHeader.jpg" alt="Drone over beach" style="width:100%;height:200px;">
+            <div class="cofclogo-container">
+                <a href="https://compsci.cofc.edu/">
+                    <img src="../index_activity/cofc-logo-2014.png" alt="Cofc Logo" style="width:100%;height:100%;">
+                </a>
+                <a href="https://aecom.com/">
+                    <img src="../index_activity/AECOM.png" alt="Cofc Logo" style="width:60%;height:60%;">
+                </a>
+            </div>
+            <div class="cofcHeaderTittle">Utilizing Drone Technology To Monitor And Analyze Shoreline Changes</div>
+            <!-- Top Navbar-->
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page" style='background-image: url("colorful_blurry_background_ii-wallpaper-2048x1152.jpg");'>
+                   
+                     <!-- Scrollable page content -->
+
+                    <div class="page-content">
+
+                        <div class="swiper-custom">
+                            <div class="swiper-container">
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div><img class="centered" src="../index_activity/click-icon.png" style="height:90px"></div>
+                                        <a href="../main_activity/main.html">
+                                            <img src="../index_activity/folly.jpg" alt="Mountain View" class="mainPgTitlePic">
+                                        </a>
+                                        <div class="beachName">Folly Beach, SC</div>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <div><img class="centered" src="../index_activity/click-icon.png" style="height:90px"></div>
+                                        <a href="../main_activity/main.html">
+                                            <img src="../index_activity/cancun.jpg" alt="Mountain View" class="mainPgTitlePic">
+                                        </a>
+                                        <div class="beachName">Cancun, MX</div>
+                                    </div>
+
+                                    <div class="swiper-slide"><span>Beach 3</span></div>
+
+
+
+                                    <div class="swiper-slide"><span>Beach 4</span></div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyCm_0ALVBPWimB_1mMc2s72PhBSZgflTqU"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="../scripts/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/my-app.js"></script>
+    <script type="text/javascript" src="../index_activity/indexScript.js"></script>
+    <script type="text/javascript" src="../main_activity/mainScript.js"></script>
+    <!--path to functions for main -->
+    <script type="text/javascript" src="../twoView_activity/twoViewScript.js"></script>
+</body>
+</html>
