@@ -74,9 +74,9 @@
 
 .slide-menu-container{
     position:absolute;
-    right:5px;
+    left:5px;
     width:120px;
-    top:400px;
+    top:60%;
 }
 
 
