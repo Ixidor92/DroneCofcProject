@@ -7,6 +7,7 @@ var Ycoords = [];
 var droneHeight = [];
 var droneTime = [];
 var droneDate = [];
+var data;
 
 //Server files
 var kmlSrcArray = [];
@@ -330,6 +331,7 @@ function pixelSearch() {
         c.drawImage(v, 0, 0, w, h);
         var data = c.getImageData(0, 0, 10, 10).data;
         //console.log(data)
+
         setTimeout(draw, 20, v, c, w, h);
     }
 

@@ -50,12 +50,12 @@
 
 #c {
     position: absolute;
-    top: 0;
+    top: 5%;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: 100%;
+    height: 56.25%;
 }
 
 .slidePresentation-container{
@@ -78,7 +78,7 @@
     position:absolute;
     left:5px;
     width:120px;
-    top:400px;
+    top:60%;
 }
 
 
