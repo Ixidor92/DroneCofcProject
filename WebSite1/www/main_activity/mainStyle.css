@@ -38,12 +38,14 @@
 }
 
 .beachName{
-        position: absolute;
+    position: absolute;
     left: 50%;
-    top: 30%;
+    top: 20%;
     transform: translateX(-50%);
     font-size: xx-large;
     color: currentColor;
+    width: inherit;
+    text-align: center;
 }
 
 #c {
@@ -74,7 +76,7 @@
 
 .slide-menu-container{
     position:absolute;
-    right:5px;
+    left:5px;
     width:120px;
     top:400px;
 }

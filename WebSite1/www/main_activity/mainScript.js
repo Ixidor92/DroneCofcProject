@@ -1,38 +1,46 @@
 ﻿var map;
 var vid;
+var beachName ='';
+//srt parsing files
 var Xcoords = [];
 var Ycoords = [];
 var droneHeight = [];
 var droneTime = [];
 var droneDate = [];
 
+//Server files
+var kmlSrcArray = [];
+var videoSrcArray = [];
+var srtSrcArray = [];
+
+
+
 myApp.onPageInit('main', function (page)
 {
 
 
 
-    $("#toggle").click(function () 
-	{
-        if ($('#panel').css('display') == 'block') 
-        {
+    //$("#toggle").click(function () 
+	//{
+    //    if ($('#panel').css('display') == 'block') 
+    //    {
 
-            var height = '-=' + $('#panel').height();
-            $('#panel').css('visibility', 'hidden');
+    //        var height = '-=' + $('#panel').height();
+    //        $('#panel').css('visibility', 'hidden');
 
-        } else 
-        {
-            $('#lower').css('width', '100%');
-            $('#panel').css('visibility', 'visible');
+    //    } else 
+    //    {
+    //        $('#lower').css('width', '100%');
+    //        $('#panel').css('visibility', 'visible');
 
-            var height = '+=' + $('#panel').height();
+    //        var height = '+=' + $('#panel').height();
 
-        }
-        $("#panel").slideToggle("slow");
-    });
+    //    }
+    //    $("#panel").slideToggle("slow");
+    //});
 
 
-	createDropdown(videos);
-    initMap();
+	//createDropdown(videos);
 
 
 
@@ -73,35 +81,20 @@ function gmapLoop() {
         vid = document.getElementById("beachVid");
         var videoSec = getCurTime();
 
-/*      var Xcoords = [];
-        var Ycoords = [];
-        var droneHeight = [];
-        var droneTime = [];
-        var droneDate = [];
-*/
-        
-
         $$("div#droneDate").text('Date: ' + droneDate[videoSec]);
         $$("div#droneHeight").text('Altitude: ' + droneHeight[videoSec]+' Meters');
         $$("div#droneTime").text('Time: ' + droneTime[videoSec]);
         $$("div#droneCoords").text('GPS: (' + Xcoords[videoSec] + ',' + Ycoords[videoSec]+')');
 
-
-
-
-
-
-
     }, 1000);
 }
 
+//Might be useless now
 function setTerrain() {
     map.setMapTypeId('terrain');
-//    var kmzLayer = new google.maps.KmlLayer('https://dl.dropboxusercontent.com/s/uwyr9ogsont4qiw/FollyBeachMap.kml?dl=1');
-  //  kmzLayer.setMap(map);
-    //map.setZoom(19);
 }
 
+//Might be useless now
 function setSatellite() {
     map.setMapTypeId('satellite');
 }
@@ -110,21 +103,16 @@ function getCurTime() {
     var videoSec = Math.round(vid.currentTime);
 
     var yourLat = Ycoords[videoSec]
-    var yourLng = Xcoords[videoSec]
-
-   
+    var yourLng = Xcoords[videoSec]   
     var latLng = new google.maps.LatLng(yourLat, yourLng); //Makes a latlng
-   // map.panTo(latLng); //Make map global
 
     panTo(yourLat, yourLng)
-
-   // map.setCenter({ lat: yourLat, lng: yourLng })
-
 
     return videoSec;
 
 }
 
+//might be useless
 function setCurTime() {
     vid.currentTime = 5;
 }
@@ -146,12 +134,10 @@ function toggleSlide() {
         $('.slidePresentation-container').css('visibility', 'visible');
 
     }
-    //   toggle++;
     srcChanged = 0;
 }
 
 function editSlide() {
-
 
     $("#myiframe").attr("src", "https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/edit#slide=id.g2125cc5467_2_10");
     $('.slidePresentation-container').css('visibility', 'visible');
@@ -180,14 +166,23 @@ function changeVideo(element, choice) {
          "https://dl.dropboxusercontent.com/s/o8nwdv5eopzmn89/DJI_0013.SRT?dl=1"
         ];
 
+    //var srtURL = "http://153.9.205.25/~aecom/WebSite1/www/Beaches/" + beachName + "/" + 'DJI_0001.SRT';
 
-    var srtURL = srtFiles[indexOfChoice-1];
+    var srtURL = "http://153.9.205.25/~aecom/WebSite1/www/getSrt.php?srtFile=" + srtSrcArray[indexOfChoice-1] +'&beach='+beachName;
+
+
+    //url: 'http://153.9.205.25/~aecom/WebSite1/www/getInfo.php?beach='+beach,
+
+    //var srtURL = srtFiles[indexOfChoice-1];
+
     //console.log(srtURL)
 
     $.ajax({
         url: srtURL,
-        success: function (file_content) {
+        crossDomain: true,
 
+        success: function (file_content) {
+            //console.log(file_content)
             Xcoords = [];
             Ycoords = [];
             droneHeight = [];
@@ -244,18 +239,24 @@ function addSourceToVideo(element, src) {
     var source = document.createElement('source');
 
     source.id = "videoSource";
-    source.src = "../main_activity/follyVideos/" + src;
+    source.src = "../Beaches/FollyBeach/"+ src;
     source.type = "video/mp4";
 
     element.appendChild(source);
 }
 
 function createDropdown(element) {
-    var myArray = new Array("exampleOne.mp4", "exampleTwo.mp4", "exampleThree.mp4", "exampleFour.mp4");
-    for (i = 0; i < myArray.length; i++) {
+    //var myArray = new Array("exampleOne.mp4", "exampleTwo.mp4", "exampleThree.mp4", "exampleFour.mp4");
+
+    // videoSrcArray
+    //console.log(videoSrcArray)
+
+
+
+    for (i = 0; i < videoSrcArray.length; i++) {
         var op = document.createElement('option');
-        var t = document.createTextNode(myArray[i]);
-        op.value = myArray[i];
+        var t = document.createTextNode(videoSrcArray[i]);
+        op.value = videoSrcArray[i];
         op.appendChild(t);
         element.appendChild(op);
     }
@@ -328,10 +329,74 @@ function pixelSearch() {
         if (v.paused || v.ended) return false;
         c.drawImage(v, 0, 0, w, h);
         var data = c.getImageData(0, 0, 10, 10).data;
-        console.log(data)
+        //console.log(data)
         setTimeout(draw, 20, v, c, w, h);
     }
 
 
 
+}
+
+
+function loadBeach(beach) {
+
+    beachName = beach;
+
+    $.ajax({
+        //This will retrieve the contents of the folder
+        url: 'http://153.9.205.25/~aecom/WebSite1/www/getInfo.php?beach='+beach,
+        dataType: "json",
+        crossDomain: true,
+
+        success: function (data) {
+            $.each(data, function(i,filename) {
+
+                switch(filename.split('.').pop()) {
+                    case 'mp4':
+                        videoSrcArray.push(filename);
+
+                        var res = filename.split(".");
+                        res = res[0] + ".SRT";
+                        srtSrcArray.push(res);
+
+                        break;
+                    case 'MOV':
+                        videoSrcArray.push(filename);
+                        break;
+                        
+
+
+
+                    case 'kml':
+                        kmlSrcArray.push(filename);
+                        break;
+                }
+
+            });
+            createDropdown(videos);
+            initMap();
+
+
+            console.log(videoSrcArray);
+            console.log(srtSrcArray);
+            console.log(kmlSrcArray);
+        }
+    });
+
+    
+
+
+    mainView.router.load({
+        url: '../main_activity/main.html',
+        context: {
+            title: beach.replace(/([A-Z])/g, ' $1').trim(),
+        }
+    })
+
+    //console.log('IM HERE')
+
+
+
+
+    
 }

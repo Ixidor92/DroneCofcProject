@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>groins</name>
+    <NetworkLink>
+      <name>Folly Beach Map</name>
+      <Link>
+        <href><![CDATA[http://www.google.com/maps/d/kml?forcekml=1&mid=1KhqUQNFNyPEiI5GyDVVbQYMsbB8&lid=86J2d0voqoU]]></href>
+      </Link>
+    </NetworkLink>
+  </Document>
+</kml>

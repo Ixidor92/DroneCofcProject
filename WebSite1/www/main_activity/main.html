@@ -7,7 +7,7 @@
 
             <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span style="font-size:20px; color:black">Back</span></a></div>
             
-           <div class="center" style="font-size:20px;">Beach Information</div>
+           <div class="center" style="font-size:20px;">{{title}} information</div>
 
             <div class="tabLinks-container">
                 <a href="../index_activity/index.html" class="item-link">
@@ -28,17 +28,17 @@
     <div class="page-content">
 
 
-        <canvas id="c" style="border: 10px solid #f00;">       </canvas>
+        <canvas id="c">       </canvas>
         
         
         <div class="video-container">
-            <form>
+            <div><form>
 
                 <select id="videos" onChange="changeVideo(beachVid,videos.value)">
                     <option>Select Video</option>
                 </select>
             </form>
-
+            </div>
 
             <video id="beachVid" style="height:100%; width:100%; position:absolute">
                 <source id="videoSource" src="" type="video/mp4">
@@ -53,7 +53,7 @@
 
         <div class="info-container">
             <div class="info">
-            Folly Beach
+            {{title}}
             <br>
             <div id="droneDate"></div>
             <div id="droneHeight"></div>
@@ -79,7 +79,7 @@
         <div class="slidePresentation-container">
             <iframe id="myiframe" src="https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
         </div>
-        <div id="lower">
+        <!--<div id="lower">
             <img src="../main_activity/settings.png" alt="HTML5 Icon" style="width:80px;height:80px; top:300px; right:20px;" id="toggle">
             <div id="bar">
                 <a href="#" class="item-link">
@@ -106,6 +106,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
