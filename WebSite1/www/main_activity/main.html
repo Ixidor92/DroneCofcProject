@@ -32,22 +32,26 @@
         
         
         <div class="video-container">
-            <div><form>
-
-
-                <select id="videos" onChange="changeVideo(beachVid,videos.value)">
-                    <option>Select Video</option>
-                </select>
-            </form>
-            </div>
+ 
 
             <video id="beachVid" style="height:100%; width:100%; position:absolute">
 
                 <source id="videoSource" src="" type="video/mp4">
             </video>
-			<button type="button" onclick="beachVid.play()">Play</button>
-			<button type="button" onclick="beachVid.pause()">Pause</button>
 
+            <div style="position: absolute; bottom: 0;">
+                <form>
+
+
+                    <select id="videos" onChange="changeVideo(beachVid,videos.value)">
+                        <option>Select Video</option>
+                    </select>
+
+                </form>
+                <button type="button" onclick="beachVid.play()">Play</button>
+                <button type="button" onclick="beachVid.pause()">Pause</button>
+
+            </div>
 
         </div>
 

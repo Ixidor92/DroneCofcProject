@@ -93,7 +93,7 @@ function addLeftSource(element, src) {
     var source = document.createElement('source');
 
     source.id = "leftSource";
-    source.src = "../main_activity/follyVideos/" + src;
+    source.src = "../Beaches/FollyBeach/" + src;
     source.type = "video/mp4";
 
     element.appendChild(source);
@@ -103,7 +103,7 @@ function addRightSource(element, src) {
     var source = document.createElement('source');
 
     source.id = "rightSource";
-    source.src = "../main_activity/follyVideos/" + src;
+    source.src = "../Beaches/FollyBeach/" + src;
     source.type = "video/mp4";
 
     element.appendChild(source);
