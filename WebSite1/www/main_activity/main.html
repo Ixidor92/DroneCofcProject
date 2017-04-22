@@ -16,7 +16,10 @@
                 <a href="../twoView_activity/twoView.html" class="item-link">
                     <img src="../main_activity/twoview-icon.png" alt="HTML5 Icon" style="height:37px;">
                 </a>
-                <button onclick="pixelSearch()">Pixel Search</button>
+
+                <!--<a href="../twoView_activity/text.html" class="item-link">
+                    <img src="../main_activity/oneViedw.png" alt="HTML5 Icon" style="height:37px;">
+                </a>-->
 
             </div>
 
@@ -28,11 +31,11 @@
     <div class="page-content">
 
 
-        <canvas id="c">       </canvas>
-        
-        
+        <!--<canvas id="c">       </canvas>-->
+
+
         <div class="video-container">
- 
+
 
             <video id="beachVid" style="height:100%; width:100%; position:absolute">
 
@@ -55,37 +58,100 @@
 
         </div>
 
-
-
-
         <div class="info-container">
             <div class="info">
-            {{title}}
-            <br>
-            <div id="droneDate"></div>
-            <div id="droneHeight"></div>
-            <div id="droneTime"></div>
-            <div id="droneCoords"></div>
-
-            </div>
-        
-        </div>
-
-        <div class="gmap-container">
-            <div id="map" style="height:100%; width:100%"></div>
-            <div class="droneIcon-container">
-                <img src="../main_activity/drone-icon.png" alt="Drone Icon" style="height:40px; width:40px;">
+                {{title}}
+                <br>
+                <div id="droneDate"></div>
+                <div id="droneHeight"></div>
+                <div id="droneTime"></div>
+                <div id="droneCoords"></div>
             </div>
         </div>
 
-        <div class="slide-menu-container">
-            <a href="#" onclick="toggleSlide()" class="button button-fill color-red">Presentation Mode</a>
-            <a href="#" onclick="editSlide()" class="button button-fill color-blue">Edit Slide</a>
-            <a href="#" onclick="" class="button button-fill color-green">Open/Close Show</a>
+        <div class="kml-container">
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <span class="item-title label">Charleston PFD</span>
+                                <div class="item-input">
+                                    <label class="label-switch">
+                                        <input type="checkbox" id ="kml-pdf" onclick="toggleKML('pdf');">
+                                        <div class="checkbox"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">flood Zones</div>
+                                <div class="item-input">
+                                    <label class="label-switch">
+                                        <input type="checkbox" id="kml-flood" onclick="toggleKML('flood');">
+                                        <div class="checkbox"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Groins</div>
+                                <div class="item-input">
+                                    <label class="label-switch">
+                                        <input type="checkbox" id="kml-groins" onclick="toggleKML('groins');">
+                                        <div class="checkbox"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Transects</div>
+                                <div class="item-input">
+                                    <label class="label-switch">
+                                        <input type="checkbox" id="kml-transects" onclick="toggleKML('transects');">
+                                        <div class="checkbox"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="slidePresentation-container">
-            <iframe id="myiframe" src="https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        </div>
+ 
 
-    </div>
+                    <div class="gmap-layer-settings-container">
+
+                        jkhkjh
+
+                    </div>
+
+
+
+
+                    <div class="gmap-container">
+                        <div id="map" style="height:100%; width:100%"></div>
+                        <div class="droneIcon-container">
+                            <img src="../main_activity/drone-icon.png" alt="Drone Icon" style="height:40px; width:40px;">
+                        </div>
+                    </div>
+
+                    <div class="slide-menu-container">
+                        <a href="#" onclick="toggleSlide()" class="button button-fill color-red">Presentation Mode</a>
+                        <a href="#" onclick="editSlide()" class="button button-fill color-blue">Edit Slide</a>
+                    </div>
+                    <div class="slidePresentation-container">
+                        <iframe id="myiframe" src="https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
+
 </div>
+    </div>

@@ -17,7 +17,7 @@
     
     position: fixed;
 	margin-top: 350px;
-	left: 5px;
+	left: 150px;
     --height:20%; 
     width: 40%;
     --border: 5px solid #000000;
@@ -26,6 +26,35 @@
 
 
 }
+
+.kml-container{
+        position: fixed;
+	--margin-top: 350px;
+    --height:20%; 
+    width: 21%;
+    --border: 5px solid #000000;
+    --background-color:red;
+    text-align: center;
+
+    left: 10px;
+    bottom: 75px;
+
+
+}
+
+
+
+.gmap-layer-settings-container{
+        position: fixed;
+	margin-top: 650px;
+	left: 5px;
+    height:20%; 
+    width: 40%;
+    border: 5px solid #000000;
+    background-color:red;
+    text-align: center;
+}
+
 
 .info{
     position: relative;
@@ -75,11 +104,12 @@
 
 
 .slide-menu-container{
-    position:absolute;
-    left:5px;
-    width:120px;
-    top:60%;
+    position: absolute;
+    left: 10px;
+    width: 120px;
+    top: 90%;
 }
+
 
 
 
@@ -167,4 +197,11 @@ iframe{
     position: absolute;
     right: 0px;
     padding: 30px;
+}
+
+.list-block .item-title.label {
+    width: 50%;
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
 }

@@ -9,68 +9,40 @@ var droneTime = [];
 var droneDate = [];
 var data;
 
+var image = '../main_activity/blueIcon.png '
+
+//var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
+
+//kml layers
+var kmlLayer1;
+var kmlLayer2;
+var kmlLayer3;
+var kmlLayer4;
+var kmlLayer5;
+
 //Server files
 var kmlSrcArray = [];
 var videoSrcArray = [];
 var srtSrcArray = [];
 
+var kmlTemp = ['https://dl.dropboxusercontent.com/s/mklumc400rhofjn/charleston_PFD.kml?dl=1', 'https://dl.dropboxusercontent.com/s/c99sgjqunvos71x/floodzones.kml?dl=1', 'https://dl.dropboxusercontent.com/s/qpc6xixqmw6b6dx/groins.kml?dl=1', 'https://dl.dropboxusercontent.com/s/omfzuniqm8qhibx/Shoreline.kml?dl=1', 'https://dl.dropboxusercontent.com/s/03v0xew2o922hwg/transects.kml?dl=1'];
+
 
 
 myApp.onPageInit('main', function (page)
 {
-
-
-
-    //$("#toggle").click(function () 
-	//{
-    //    if ($('#panel').css('display') == 'block') 
-    //    {
-
-    //        var height = '-=' + $('#panel').height();
-    //        $('#panel').css('visibility', 'hidden');
-
-    //    } else 
-    //    {
-    //        $('#lower').css('width', '100%');
-    //        $('#panel').css('visibility', 'visible');
-
-    //        var height = '+=' + $('#panel').height();
-
-    //    }
-    //    $("#panel").slideToggle("slow");
-    //});
-
-
-	//createDropdown(videos);
-
-
-
+    //pixelSearch();
 });
 
-function loadKmlLayer(src) {
-    var kmlLayer = new google.maps.KmlLayer(src, {
-        suppressInfoWindows: true,
-        preserveViewport: true,
-        zoom: 17,
-        map: map
-    });
-}
+
 
 function initMap() {
-    //videoSec = getCurTime();
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 32.6630, lng: -79.9205 },
         zoom: 19,
-        mapTypeId: google.maps.MapTypeId.TERRAIN
+        mapTypeId: google.maps.MapTypeId.SATELLITE
     });
-    //https://www.dropbox.com/s/bfslbxmzdbzigh0/follyFloodZones.kml?dl=1
-    //loadKmlLayer('https://dl.dropboxusercontent.com/s/uwyr9ogsont4qiw/FollyBeachMap.kml?dl=1');
-    //loadKmlLayer('https://dl.dropboxusercontent.com/s/vlomruiknr1ydfo/folly_shoreline.shp.kml?dl=1');
-
-
-    //https://www.dropbox.com/s/vlomruiknr1ydfo/folly_shoreline.shp.kml?dl=1
-    //https://www.dropbox.com/s/pbgwl9lkbwlw4cp/follyShoreLine.kml?dl=1
-    loadKmlLayer('https://dl.dropboxusercontent.com/s/bfslbxmzdbzigh0/follyFloodZones.kml?dl=1');
 
 
 }
@@ -102,13 +74,11 @@ function setSatellite() {
 
 function getCurTime() {
     var videoSec = Math.round(vid.currentTime);
-
     var yourLat = Ycoords[videoSec]
     var yourLng = Xcoords[videoSec]   
     var latLng = new google.maps.LatLng(yourLat, yourLng); //Makes a latlng
 
     panTo(yourLat, yourLng)
-
     return videoSec;
 
 }
@@ -128,28 +98,26 @@ function toggleSlide() {
     toggler++;
     if (toggler % 2 == 0)
     {
-        $('.slidePresentation-container').css('visibility', 'hidden');
-
-    }
-    else {
-        $('.slidePresentation-container').css('visibility', 'visible');
-
-    }
+        $('.slidePresentation-container').css('visibility', 'hidden'); }
+    else { $('.slidePresentation-container').css('visibility', 'visible');}
     srcChanged = 0;
 }
 
 function editSlide() {
-
     $("#myiframe").attr("src", "https://docs.google.com/presentation/d/1IeqKvbWp7m9_8CJw7zToX88lVHbKgbIZB23N5qdO31c/edit#slide=id.g2125cc5467_2_10");
     $('.slidePresentation-container').css('visibility', 'visible');
-
     srcChanged = 1;
 }
-
 
 function changeVideo(element, choice) {
     element.removeChild(videoSource);
     addSourceToVideo(element, choice);
+    initMap();
+    $("#kml-pdf").prop("checked", false);
+    $("#kml-flood").prop("checked", false);
+    $("#kml-groins").prop("checked", false);
+    $("#kml-transects").prop("checked", false);
+
 
     element.load();
     element.play();
@@ -157,26 +125,9 @@ function changeVideo(element, choice) {
     var x = document.getElementById("videos").selectedIndex;
     var y = document.getElementById("videos").options;
     var indexOfChoice = y[x].index;
-    //console.log(indexOfChoice);
-
-    //This will be in a database/SERVER
-    var srtFiles = 
-        ["https://dl.dropboxusercontent.com/s/3r24rzogrelv5s7/DJI_0001.SRT?dl=1",
-         "https://dl.dropboxusercontent.com/s/b01avn34k71duv4/DJI_0007.SRT?dl=1",
-         "https://dl.dropboxusercontent.com/s/1k36j6vgbak3fx5/DJI_0011.SRT?dl=1",
-         "https://dl.dropboxusercontent.com/s/o8nwdv5eopzmn89/DJI_0013.SRT?dl=1"
-        ];
-
-    //var srtURL = "http://153.9.205.25/~aecom/WebSite1/www/Beaches/" + beachName + "/" + 'DJI_0001.SRT';
-
     var srtURL = "http://153.9.205.25/~aecom/WebSite1/www/getSrt.php?srtFile=" + srtSrcArray[indexOfChoice-1] +'&beach='+beachName;
 
-
-    //url: 'http://153.9.205.25/~aecom/WebSite1/www/getInfo.php?beach='+beach,
-
-    //var srtURL = srtFiles[indexOfChoice-1];
-
-    //console.log(srtURL)
+    console.log(srtURL)
 
     $.ajax({
         url: srtURL,
@@ -268,6 +219,89 @@ var panPath = [];   // An array of points the current panning action will use
 var panQueue = [];  // An array of subsequent panTo actions to take
 var STEPS = 50;     // The number of steps that each panTo action will undergo
 
+
+
+
+//function loadKmlLayer(src) {
+//    var kmlLayer = new google.maps.KmlLayer(src, {
+//        suppressInfoWindows: true,
+//        preserveViewport: true,
+//        //zoom: 17,
+//        map: map
+//    });
+//}
+
+function toggleKML(layer) {
+
+    if (layer=='pdf'){
+        if (document.getElementById('kml-pdf').checked) {
+            kmlLayer1 = new google.maps.KmlLayer('https://dl.dropboxusercontent.com/s/mklumc400rhofjn/charleston_PFD.kml?dl=1', {
+                suppressInfoWindows: true,
+                preserveViewport: true,
+                map: map
+            });
+            kmlLayer1.setMap(map);
+        } else {
+            kmlLayer1.setMap(null);
+        }
+    }
+    if (layer == 'flood') {
+        if (document.getElementById('kml-flood').checked) {
+            kmlLayer2 = new google.maps.KmlLayer('https://dl.dropboxusercontent.com/s/c99sgjqunvos71x/floodzones.kml?dl=1', {
+                suppressInfoWindows: true,
+                preserveViewport: true,
+                map: map
+            });
+            kmlLayer2.setMap(map);
+        } else {
+            kmlLayer2.setMap(null);
+        }
+    }
+    if (layer == 'groins') {
+        if (document.getElementById('kml-groins').checked) {
+            kmlLayer3 = new google.maps.KmlLayer('https://dl.dropboxusercontent.com/s/qpc6xixqmw6b6dx/groins.kml?dl=1', {
+                suppressInfoWindows: true,
+                preserveViewport: true,
+                map: map
+            });
+            kmlLayer3.setMap(map);
+        } else {
+            kmlLayer3.setMap(null);
+        }
+    }
+    if (layer == 'shore') {
+        if (document.getElementById('kml-shore').checked) {
+            kmlLayer4 = new google.maps.KmlLayer('https://dl.dropboxusercontent.com/s/omfzuniqm8qhibx/Shoreline.kml?dl=1', {
+                suppressInfoWindows: true,
+                preserveViewport: true,
+                map: map
+            });
+            kmlLayer4.setMap(map);
+        } else {
+            kmlLayer4.setMap(null);
+        }
+    }
+    if (layer == 'transects') {
+        if (document.getElementById('kml-transects').checked) {
+            kmlLayer5 = new google.maps.KmlLayer('https://dl.dropboxusercontent.com/s/03v0xew2o922hwg/transects.kml?dl=1', {
+                suppressInfoWindows: true,
+                preserveViewport: true,
+                map: map
+            });
+            kmlLayer5.setMap(map);
+        } else {
+            kmlLayer5.setMap(null);
+        }
+    }
+
+
+
+
+
+
+
+}
+
 function panTo(newLat, newLng) {
     if (panPath.length > 0) {
         // We are already panning...queue this up for next move
@@ -294,6 +328,14 @@ function doPan() {
     if (next != null) {
         // Continue our current pan action
         map.panTo(new google.maps.LatLng(next[0], next[1]));
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(next[0], next[1]),
+            map: map,
+            icon: image,
+            //title: 'Hello World!'
+        });
+
         setTimeout(doPan, 20);
     } else {
         // We are finished with this pan - check if there are any queue'd up locations to pan to 
@@ -375,13 +417,19 @@ function loadBeach(beach) {
                 }
 
             });
-            createDropdown(videos);
-            initMap();
+
+            setTimeout(function () {
+                createDropdown(videos);
+                initMap();
 
 
-            console.log(videoSrcArray);
-            console.log(srtSrcArray);
-            console.log(kmlSrcArray);
+            }, 1500);
+
+
+
+            //console.log(videoSrcArray);
+            //console.log(srtSrcArray);
+            //console.log(kmlSrcArray);
         }
     });
 
@@ -394,6 +442,7 @@ function loadBeach(beach) {
             title: beach.replace(/([A-Z])/g, ' $1').trim(),
         }
     })
+    //createDropdown();
 
     //console.log('IM HERE')
 
