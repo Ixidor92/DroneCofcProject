@@ -58,82 +58,11 @@
 
         </div>
 
-        <div class="info-container">
-            <div class="info">
-                {{title}}
-                <br>
-                <div id="droneDate"></div>
-                <div id="droneHeight"></div>
-                <div id="droneTime"></div>
-                <div id="droneCoords"></div>
-            </div>
-        </div>
 
-        <div class="kml-container">
-            <div class="list-block">
-                <ul>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <span class="item-title label">Charleston PFD</span>
-                                <div class="item-input">
-                                    <label class="label-switch">
-                                        <input type="checkbox" id ="kml-pdf" onclick="toggleKML('pdf');">
-                                        <div class="checkbox"></div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">flood Zones</div>
-                                <div class="item-input">
-                                    <label class="label-switch">
-                                        <input type="checkbox" id="kml-flood" onclick="toggleKML('flood');">
-                                        <div class="checkbox"></div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Groins</div>
-                                <div class="item-input">
-                                    <label class="label-switch">
-                                        <input type="checkbox" id="kml-groins" onclick="toggleKML('groins');">
-                                        <div class="checkbox"></div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Transects</div>
-                                <div class="item-input">
-                                    <label class="label-switch">
-                                        <input type="checkbox" id="kml-transects" onclick="toggleKML('transects');">
-                                        <div class="checkbox"></div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        
  
 
-                    <div class="gmap-layer-settings-container">
 
-                        jkhkjh
-
-                    </div>
 
 
 
@@ -143,6 +72,80 @@
                         <div class="droneIcon-container">
                             <img src="../main_activity/drone-icon.png" alt="Drone Icon" style="height:40px; width:40px;">
                         </div>
+
+
+
+                        <div class="info-container">
+                            <div class="info">
+                                {{title}}
+                                <br>
+                                <div id="droneDate"></div>
+                                <div id="droneHeight"></div>
+                                <div id="droneTime"></div>
+                                <div id="droneCoords"></div>
+                            </div>
+                        </div>
+
+                        <div class="kml-container">
+                            <div class="list-block" style="margin: 0;">
+                                <ul style="border: 5px solid #000000;">
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <span class="item-title label">Primary Frontal Dune</span>
+                                                <div class="item-input">
+                                                    <label class="label-switch">
+                                                        <input type="checkbox" id="kml-pdf" onclick="toggleKML('pdf');">
+                                                        <div class="checkbox"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">FEMA Flood Zones</div>
+                                                <div class="item-input">
+                                                    <label class="label-switch">
+                                                        <input type="checkbox" id="kml-flood" onclick="toggleKML('flood');">
+                                                        <div class="checkbox"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Groins</div>
+                                                <div class="item-input">
+                                                    <label class="label-switch">
+                                                        <input type="checkbox" id="kml-groins" onclick="toggleKML('groins');">
+                                                        <div class="checkbox"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">WHAFIS Transects</div>
+                                                <div class="item-input">
+                                                    <label class="label-switch">
+                                                        <input type="checkbox" id="kml-transects" onclick="toggleKML('transects');">
+                                                        <div class="checkbox"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
                     </div>
 
                     <div class="slide-menu-container">

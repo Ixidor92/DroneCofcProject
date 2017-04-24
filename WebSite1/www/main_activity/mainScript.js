@@ -55,7 +55,7 @@ function gmapLoop() {
         var videoSec = getCurTime();
 
         $$("div#droneDate").text('Date: ' + droneDate[videoSec]);
-        $$("div#droneHeight").text('Altitude: ' + droneHeight[videoSec]+' Meters');
+        $$("div#droneHeight").text('Altitude: ' + parseFloat((droneHeight[videoSec]) * 3.28084).toFixed(2) + ' Feet');
         $$("div#droneTime").text('Time: ' + droneTime[videoSec]);
         $$("div#droneCoords").text('GPS: (' + Xcoords[videoSec] + ',' + Ycoords[videoSec]+')');
 
@@ -217,7 +217,7 @@ function createDropdown(element) {
 
 var panPath = [];   // An array of points the current panning action will use
 var panQueue = [];  // An array of subsequent panTo actions to take
-var STEPS = 50;     // The number of steps that each panTo action will undergo
+var STEPS = 10;     // The number of steps that each panTo action will undergo
 
 
 
