@@ -31,32 +31,58 @@
     <div class="page-content">
 
 
-        <!--<canvas id="c">       </canvas>-->
 
 
         <div class="video-container">
 
 
-            <video id="beachVid" style="height:100%; width:100%; position:absolute">
+            <div>
+                <button type="button" onclick="clearCanvas()">Clear Canvas</button> <span style="color:white;margin-left:20px">     Pen Color: </span>  
+                
+                <button type="button" onclick="penColor('red')">Red</button>
+                <button type="button" onclick="penColor('yellow')">Yellow</button>
+                <button type="button" onclick="penColor('purple')">Purple</button>
+                <button type="button" onclick="penColor('black')">Black</button>
+                <button type="button" onclick="penColor('green')">Green</button>
 
-                <source id="videoSource" src="" type="video/mp4">
-            </video>
-
-            <div style="position: absolute; bottom: 0;">
-                <form>
 
 
-                    <select id="videos" onChange="changeVideo(beachVid,videos.value)">
-                        <option>Select Video</option>
-                    </select>
 
-                </form>
-                <button type="button" onclick="beachVid.play()">Play</button>
-                <button type="button" onclick="beachVid.pause()">Pause</button>
+
+
+
+
+
+
+                </div>
+
+                <video id="beachVid" style="height:100%; width:100%; position:absolute">
+
+                    <source id="videoSource" src="" type="video/mp4">
+                </video>
+
+
+
+                <div id="container" style="width: 100%;height: 90%;position: absolute;"><canvas style="cursor: pointer;" id="imageView" width="2000" height="2000"><p>Unfortunately, your browser is currently unsupported by our web application. We are sorry for the inconvenience. Please use one of the supported browsers listed below, or draw the image you want using an offline tool.</p><p>Supported browsers: <a href="http://www.opera.com">Opera</a>, <a href="http://www.mozilla.com">Firefox</a>, <a href="http://www.apple.com/safari">Safari</a>, and <a href="http://www.konqueror.org">Konqueror</a>.</p></canvas></div>
+
+
+                <div style="position: absolute; bottom: 0;">
+                    <form>
+
+
+                        <select id="videos" onChange="changeVideo(beachVid,videos.value)">
+                            <option>Select Video</option>
+                        </select>
+
+                    </form>
+                    <button type="button" onclick="beachVid.play()">Play</button>
+                    <button type="button" onclick="beachVid.pause()">Pause</button>
+
+
+
+                </div>
 
             </div>
-
-        </div>
 
 
         
